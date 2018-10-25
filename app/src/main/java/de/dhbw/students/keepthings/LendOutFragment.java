@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LendOutFragment extends Fragment {
 
@@ -38,8 +42,26 @@ public class LendOutFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         dataModels = new ArrayList<>();
+
+        JSONObject job;
+        int len = 0;
+        String temp = "baum";
+        try {
+            job = new JSONObject("{\"result\":[{\"ITEM_ID\":\"1\",\"ITEM_NAME\":\"Lautsprecher\",\"ITEM_DESC\":\"Lautsprecher\",\"OWNER\":\"bl\",\"BORROWER\":\"Nils\",\"DATE_FROM\":\"2018-10-09\",\"DATE_TO\":\"2018-10-18\"},{\"ITEM_ID\":\"2\",\"ITEM_NAME\":\"Test\",\"ITEM_DESC\":\"Test123\",\"OWNER\":\"bl\",\"BORROWER\":\"Noob\",\"DATE_FROM\":\"2018-10-16\",\"DATE_TO\":\"2018-10-31\"}]}");
+            len = job.length();
+            Iterator<String> keys = job.keys();
+            while (keys.hasNext()) {
+                temp = keys.next();
+                dataModels.add(new LentOutEntry("title", temp, "dateTo", "dateFrom"));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         dataModels.add(new LentOutEntry("title", "person", "dateTo", "dateFrom"));
         dataModels.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
@@ -54,6 +76,7 @@ public class LendOutFragment extends Fragment {
         dataModels.add(new LentOutEntry("Schraubenzieher", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
         dataModels.add(new LentOutEntry("Biertischgarnitur", "Max Mustermann", "30 Oct 18", "12 Oct 18"));
         dataModels.add(new LentOutEntry("Anhänger", "Max Mustermann", "30 Oct 18", "5 Oct 18"));
+        dataModels.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "5 Oct 18"));
 
         View rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
 
