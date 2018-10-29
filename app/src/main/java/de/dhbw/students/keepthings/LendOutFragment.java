@@ -27,7 +27,7 @@ public class LendOutFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         ApiConnection apiConnections = new ApiConnection(getActivity(), "");
-        apiConnections.execute("Aktie");
+        apiConnections.execute("Lent out");
     }
 
     @Override

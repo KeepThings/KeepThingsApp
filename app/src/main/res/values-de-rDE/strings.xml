@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KeepThings</string>
+    <string name="stringDateFrom">Datum von</string>
+    <string name="stringDateTo">Datum bis</string>
+    <string name="stringPerson">Person</string>
+    <string name="stringDesc">Beschreibung</string>
+    <string name="stringTitle">Titel</string>
+    <string name="stringNewLentOutEntry">Neuer Eintrag</string>
+    <string name="stringSave">Speichern</string>
 </resources>

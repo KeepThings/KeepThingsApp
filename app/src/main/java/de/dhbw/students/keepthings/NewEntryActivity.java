@@ -1,7 +1,6 @@
 package de.dhbw.students.keepthings;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -17,8 +16,6 @@ public class NewEntryActivity extends AppCompatActivity {
             actionBar.setIcon(R.mipmap.keep_things_schrift);
             actionBar.setDisplayShowTitleEnabled(false);
         }
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.hide();
 
     }
 }

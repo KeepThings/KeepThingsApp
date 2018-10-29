@@ -1,7 +1,6 @@
 package de.dhbw.students.keepthings;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,16 +8,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import android.widget.EditText;
 
 
 public class NewLentOutEntryFragment extends Fragment {
 
-    private static CustomAdapter adapter;
-    private ArrayList<LentOutEntry> dataModels;
-    private ListView lentOutEntryList;
 
     public NewLentOutEntryFragment() {
     }
@@ -35,22 +29,18 @@ public class NewLentOutEntryFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        dataModels = new ArrayList<>();
+        View rootView = inflater.inflate(R.layout.fragment_new_lent_out_entry, container, false);
 
-        dataModels.add(new LentOutEntry("Make your new entry here.", "person", "dateTo", "dateFrom"));
+        EditText titleEdit = rootView.findViewById(R.id.title_edit);
+        EditText descEdit = rootView.findViewById(R.id.desc_edit);
+        EditText personEdit = rootView.findViewById(R.id.person_edit);
+        EditText dateFromEdit = rootView.findViewById(R.id.date_from_edit);
+        EditText dateToEdit = rootView.findViewById(R.id.date_to_edit);
 
-        View rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
-
-
-        lentOutEntryList = rootView.findViewById(R.id.lent_out_entry_list);
-
-        adapter = new CustomAdapter(dataModels, rootView.getContext());
-
-        lentOutEntryList.setAdapter(adapter);
 
         return rootView;
     }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">KeepThings</string>
+    <string name="stringTitle">Title</string>
+    <string name="stringDesc">Description</string>
+    <string name="stringPerson">Person</string>
+    <string name="stringDateFrom">Date from</string>
+    <string name="stringDateTo">Date to</string>
+    <string name="stringNewLentOutEntry">New Entry</string>
+    <string name="stringSave">Save</string>
 </resources>
