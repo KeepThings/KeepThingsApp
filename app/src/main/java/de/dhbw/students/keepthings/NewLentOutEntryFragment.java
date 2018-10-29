@@ -1,6 +1,7 @@
 package de.dhbw.students.keepthings;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 
 public class NewLentOutEntryFragment extends Fragment {
@@ -29,17 +29,11 @@ public class NewLentOutEntryFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         View rootView = inflater.inflate(R.layout.fragment_new_lent_out_entry, container, false);
-
-        EditText titleEdit = rootView.findViewById(R.id.title_edit);
-        EditText descEdit = rootView.findViewById(R.id.desc_edit);
-        EditText personEdit = rootView.findViewById(R.id.person_edit);
-        EditText dateFromEdit = rootView.findViewById(R.id.date_from_edit);
-        EditText dateToEdit = rootView.findViewById(R.id.date_to_edit);
 
 
         return rootView;
