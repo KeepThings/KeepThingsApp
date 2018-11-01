@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">KeepThings</string>
     <string name="stringDateFrom">Von</string>
     <string name="stringDateTo">Bis</string>
     <string name="stringPerson">Person</string>
