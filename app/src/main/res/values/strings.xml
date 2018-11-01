@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KeepThings</string>
+    <string name="app_name" translatable="false">KeepThings</string>
     <string name="stringTitle">Title</string>
     <string name="stringDesc">Description</string>
     <string name="stringPerson">Person</string>

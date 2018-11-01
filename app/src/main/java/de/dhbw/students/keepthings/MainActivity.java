@@ -16,6 +16,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.keep_things_schrift);
         actionBar.setDisplayShowTitleEnabled(false);
+
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
