@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {
 
-    private int lastPosition = -1;
 
     public CustomAdapter(ArrayList<LentOutEntry> data, Context context) {
         super(context, R.layout.lent_out_entry, data);
@@ -39,10 +38,10 @@ public class CustomAdapter extends ArrayAdapter<LentOutEntry> implements View.On
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.lent_out_entry, parent, false);
-            viewHolder.txtTitle = (TextView) convertView.findViewById(R.id.title);
-            viewHolder.txtPerson = (TextView) convertView.findViewById(R.id.person);
-            viewHolder.txtDateTo = (TextView) convertView.findViewById(R.id.dateto);
-            viewHolder.txtDateFrom = (TextView) convertView.findViewById(R.id.datefrom);
+            viewHolder.txtTitle = convertView.findViewById(R.id.title);
+            viewHolder.txtPerson = convertView.findViewById(R.id.person);
+            viewHolder.txtDateTo = convertView.findViewById(R.id.dateto);
+            viewHolder.txtDateFrom = convertView.findViewById(R.id.datefrom);
 
             result = convertView;
 

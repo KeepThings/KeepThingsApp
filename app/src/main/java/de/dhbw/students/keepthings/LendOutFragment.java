@@ -26,6 +26,8 @@ public class LendOutFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        ApiConnection apiConnections = new ApiConnection(getActivity(), "");
+        apiConnections.execute("Lent out");
     }
 
     @Override
@@ -37,7 +39,6 @@ public class LendOutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         dataModels = new ArrayList<>();
 
@@ -54,11 +55,12 @@ public class LendOutFragment extends Fragment {
         dataModels.add(new LentOutEntry("Schraubenzieher", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
         dataModels.add(new LentOutEntry("Biertischgarnitur", "Max Mustermann", "30 Oct 18", "12 Oct 18"));
         dataModels.add(new LentOutEntry("Anhänger", "Max Mustermann", "30 Oct 18", "5 Oct 18"));
+        dataModels.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "17 Oct 18"));
 
         View rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
 
 
-        lentOutEntryList = (ListView) rootView.findViewById(R.id.lent_out_entry_list);
+        lentOutEntryList = rootView.findViewById(R.id.lent_out_entry_list);
 
         adapter = new CustomAdapter(dataModels, rootView.getContext());
 
@@ -75,9 +77,6 @@ public class LendOutFragment extends Fragment {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

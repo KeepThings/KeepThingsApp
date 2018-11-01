@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">KeepThings</string>
-    <string name="settings">Settings</string>
+    <string name="stringTitle">Title</string>
+    <string name="stringDesc">Description</string>
+    <string name="stringPerson">Person</string>
+    <string name="stringDateFrom">From</string>
+    <string name="stringDateTo">To</string>
+    <string name="stringNewLentOutEntry">New Entry</string>
+    <string name="stringSave">Save</string>
+    <string name="dateFromErrorMessage">Please select a date befor the end date.</string>
+    <string name="dateToErrorMessage">Please select a date after the start date.</string>
 </resources>
