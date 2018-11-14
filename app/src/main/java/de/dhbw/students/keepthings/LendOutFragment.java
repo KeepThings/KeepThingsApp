@@ -26,7 +26,7 @@ public class LendOutFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        ApiConnection apiConnections = new ApiConnection(getActivity(), "");
+        ApiConnection apiConnections = new ApiConnection("");
         apiConnections.execute("Lent out");
     }
 
