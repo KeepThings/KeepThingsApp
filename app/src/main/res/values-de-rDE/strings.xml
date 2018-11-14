@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">KeepThings</string>
     <string name="stringDateFrom">Von</string>
     <string name="stringDateTo">Bis</string>
     <string name="stringPerson">Person</string>
@@ -9,4 +10,6 @@
     <string name="stringSave">Speichern</string>
     <string name="dateFromErrorMessage">Bitte wähle ein Datum vor dem Enddatum.</string>
     <string name="dateToErrorMessage">Bitte wähle ein Datum nach dem Startdatum.</string>
+    <string name="my_entry_list">Meine Einträge</string>
+    <string name="marketplace">Marktplatz</string>
 </resources>

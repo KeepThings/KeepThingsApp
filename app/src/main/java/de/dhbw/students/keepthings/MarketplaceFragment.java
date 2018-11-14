@@ -1,8 +1,6 @@
 package de.dhbw.students.keepthings;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,24 +9,20 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class LendOutFragment extends Fragment {
-
+public class MarketplaceFragment extends Fragment {
 
     private static CustomAdapter adapter;
     private ArrayList<LentOutEntry> dataModels;
-    private ListView lentOutEntryList;
-    private FloatingActionButton fab;
-    View rootView;
+    private ListView merketplaceEntryList;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         dataModels = new ArrayList<>();
 
-        dataModels.add(new LentOutEntry("title", "person", "dateTo", "dateFrom"));
-        dataModels.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
+        dataModels.add(new LentOutEntry("title", "person who need smthng", "dateFrom", "dateTo"));
         dataModels.add(new LentOutEntry("Pfanne", "Max Mustermann", "30 Oct 18", "27 Oct 18"));
         dataModels.add(new LentOutEntry("30 Euro", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
         dataModels.add(new LentOutEntry("Fahrradpumpe", "Max Mustermann", "30 Oct 18", "26 Oct 18"));
@@ -41,25 +35,16 @@ public class LendOutFragment extends Fragment {
         dataModels.add(new LentOutEntry("Biertischgarnitur", "Max Mustermann", "30 Oct 18", "12 Oct 18"));
         dataModels.add(new LentOutEntry("Anhänger", "Max Mustermann", "30 Oct 18", "5 Oct 18"));
         dataModels.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "17 Oct 18"));
+        dataModels.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
 
-        rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_marketplace, container, false);
 
-        lentOutEntryList = rootView.findViewById(R.id.lent_out_entry_list);
+
+        merketplaceEntryList = rootView.findViewById(R.id.marketplace_entry_list);
 
         adapter = new CustomAdapter(dataModels, rootView.getContext());
 
-        lentOutEntryList.setAdapter(adapter);
-
-        fab = rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(rootView.getContext(), NewEntryActivity.class);
-                startActivity(i);
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-//                        new MarketplaceFragment()).commit();
-            }
-        });
+        merketplaceEntryList.setAdapter(adapter);
 
         return rootView;
     }
