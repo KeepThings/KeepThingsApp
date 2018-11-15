@@ -12,9 +12,29 @@
             android:id="@+id/nav_marketplace"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/marketplace" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
     </group>
+
+    <item android:title="Company">
+        <menu>
+
+            <group android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/nav_wordpress"
+                    android:icon="@drawable/ic_wordpress_logo"
+                    android:title="Blog" />
+
+                <item
+                    android:id="@+id/nav_github"
+                    android:icon="@drawable/ic_github_logo"
+                    android:title="GitHub" />
+
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_menu_about"
+                    android:title="About" />
+
+            </group>
+        </menu>
+    </item>
 </menu>

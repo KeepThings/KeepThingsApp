@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".AboutActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -31,18 +31,31 @@
                 android:src="@mipmap/keep_things_schrift" />
         </android.support.v7.widget.Toolbar>
 
-        <fragment
-            android:id="@+id/lendoutfragment_container"
-            android:name="de.dhbw.students.keepthings.MainFragment"
+        <LinearLayout
+            android:id="@+id/wordpress_button"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/draw_menu" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_wordpress_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center|start"
+                android:paddingStart="16dp"
+                android:text="Wordpress Blog"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+
+        <!--<fragment-->
+        <!--android:id="@+id/lendoutfragment_container"-->
+        <!--android:name="de.dhbw.students.keepthings.MainFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+    </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

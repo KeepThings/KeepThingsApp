@@ -13,4 +13,9 @@
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="my_entry_list">My List</string>
     <string name="marketplace">Marketplace</string>
+    <string name="about">About</string>
+    <string name="wordpress_link" translatable="false">keepthingsnlb.wordpress.com</string>
+    <string name="github_link" translatable="false">https://github.com/KeepThings/</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>

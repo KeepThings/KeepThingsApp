@@ -1,8 +1,9 @@
 package de.dhbw.students.keepthings;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,7 +15,6 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
-    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +40,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 new LendOutFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_lend_out_list);
 
-        fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, NewEntryActivity.class));
-//            }
-//        });
-
     }
 
 
@@ -71,6 +63,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
                         new MarketplaceFragment()).commit();
                 break;
+            case R.id.nav_about:
+                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(i);
+                break;
+            case R.id.nav_wordpress:
+                String wordpressUrl = "https://keepthingsnlb.wordpress.com/";
+                Intent wordpressIntent = new Intent();
+                wordpressIntent.setAction(Intent.ACTION_VIEW);
+                wordpressIntent.setData(Uri.parse(wordpressUrl));
+                startActivity(wordpressIntent);
+                break;
+            case R.id.nav_github:
+                String githubUrl = "https://github.com/KeepThings/";
+                Intent githubIntent = new Intent();
+                githubIntent.setAction(Intent.ACTION_VIEW);
+                githubIntent.setData(Uri.parse(githubUrl));
+                startActivity(githubIntent);
+                break;
+
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

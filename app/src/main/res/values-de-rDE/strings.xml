@@ -12,4 +12,5 @@
     <string name="dateToErrorMessage">Bitte wähle ein Datum nach dem Startdatum.</string>
     <string name="my_entry_list">Meine Einträge</string>
     <string name="marketplace">Marktplatz</string>
+    <string name="about">Über</string>
 </resources>

@@ -18,7 +18,7 @@ public class LendOutFragment extends Fragment {
     private ArrayList<LentOutEntry> dataModels;
     private ListView lentOutEntryList;
     private FloatingActionButton fab;
-    View rootView;
+    private View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
@@ -56,8 +56,6 @@ public class LendOutFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(rootView.getContext(), NewEntryActivity.class);
                 startActivity(i);
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-//                        new MarketplaceFragment()).commit();
             }
         });
 
