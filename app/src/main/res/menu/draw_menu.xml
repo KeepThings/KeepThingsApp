@@ -29,11 +29,6 @@
                     android:icon="@drawable/ic_github_logo"
                     android:title="@string/github" />
 
-                <item
-                    android:id="@+id/nav_about"
-                    android:icon="@drawable/ic_menu_about"
-                    android:title="@string/about" />
-
             </group>
         </menu>
     </item>
