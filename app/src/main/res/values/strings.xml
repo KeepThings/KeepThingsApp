@@ -16,6 +16,8 @@
     <string name="about">About</string>
     <string name="wordpress_link" translatable="false">keepthingsnlb.wordpress.com</string>
     <string name="github_link" translatable="false">https://github.com/KeepThings/</string>
+    <string name="company">Company</string>
+    <string name="blog">Blog</string>
+    <string name="github">GitHub</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
 </resources>

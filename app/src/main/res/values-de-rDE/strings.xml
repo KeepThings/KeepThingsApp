@@ -13,4 +13,7 @@
     <string name="my_entry_list">Meine Einträge</string>
     <string name="marketplace">Marktplatz</string>
     <string name="about">Über</string>
+    <string name="company">Company</string>
+    <string name="blog">Blog</string>
+    <string name="github">GitHub</string>
 </resources>
