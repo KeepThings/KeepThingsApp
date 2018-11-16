@@ -63,10 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
                         new MarketplaceFragment()).commit();
                 break;
-            case R.id.nav_about:
-                Intent i = new Intent(MainActivity.this, AboutActivity.class);
-                startActivity(i);
-                break;
             case R.id.nav_wordpress:
                 String wordpressUrl = "https://keepthingsnlb.wordpress.com/";
                 Intent wordpressIntent = new Intent();

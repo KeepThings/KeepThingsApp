@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewEntryActivity" />
-        <activity android:name=".AboutActivity"/>
     </application>
 
 </manifest>
