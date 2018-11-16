@@ -92,60 +92,65 @@ public class NewEntryActivity extends AppCompatActivity {
     }
 
     private void showFromDate(int year, int month, int day) {
-        boolean error = false;
+        if (toYear == year && toMonth + 1 == month && toDay == day) {
+            dateFromView.setText(new StringBuilder().append(day).append("/")
+                    .append(month).append("/").append(year));
+            return;
+        }
         if (toYear < year) {
             year = toYear;
             month = toMonth + 1;
             day = toDay;
-            error = true;
+            showToast(R.string.dateFromErrorMessage);
         }
         if (toYear <= year && toMonth + 1 < month) {
             year = toYear;
             month = toMonth + 1;
             day = toDay;
-            error = true;
+            showToast(R.string.dateFromErrorMessage);
         }
         if (toMonth + 1 <= month && toDay <= day) {
             month = toMonth + 1;
             day = toDay;
-            error = true;
+            showToast(R.string.dateFromErrorMessage);
         }
 
-        if (error) {
-            Toast.makeText(getApplicationContext(), R.string.dateFromErrorMessage,
-                    Toast.LENGTH_SHORT).show();
-        }
 
         dateFromView.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
     }
 
     private void showToDate(int year, int month, int day) {
-        boolean error = false;
+        if (fromYear == year && fromMonth + 1 == month && fromDay == day) {
+            dateToView.setText(new StringBuilder().append(day).append("/")
+                    .append(month).append("/").append(year));
+            return;
+        }
         if (fromYear > year) {
             year = fromYear;
             month = fromMonth + 1;
             day = fromDay;
-            error = true;
+            showToast(R.string.dateToErrorMessage);
         }
         if (fromYear >= year && fromMonth + 1 > month) {
             year = fromYear;
             month = fromMonth + 1;
             day = fromDay;
-            error = true;
+            showToast(R.string.dateToErrorMessage);
         }
         if (fromMonth + 1 >= month && fromDay >= day) {
             month = fromMonth + 1;
             day = fromDay;
-            error = true;
+            showToast(R.string.dateToErrorMessage);
         }
 
-        if (error) {
-            Toast.makeText(getApplicationContext(), R.string.dateToErrorMessage,
-                    Toast.LENGTH_SHORT).show();
-        }
 
         dateToView.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
+    }
+
+    private void showToast(int message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
     }
 }
