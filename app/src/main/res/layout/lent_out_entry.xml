@@ -25,7 +25,6 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/raleway_light_italic"
         android:text="person"
-        android:textColor="@color/colorLightGrey"
         android:textSize="38px" />
 
     <TextView
@@ -38,7 +37,6 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/raleway_light_italic"
         android:text="dateTo"
-        android:textColor="@color/colorLightGrey"
         android:textSize="50px"
         android:textStyle="bold" />
 
@@ -51,7 +49,6 @@
         android:layout_alignParentEnd="true"
         android:fontFamily="@font/raleway_light_italic"
         android:text="dateFrom"
-        android:textColor="@color/colorLightGrey"
         android:textSize="38px" />
 
 </RelativeLayout>
