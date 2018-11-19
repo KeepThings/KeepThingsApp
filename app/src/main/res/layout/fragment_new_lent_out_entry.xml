@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/colorBlue"
-            android:inputType="date"
             android:maxLength="50"
             android:singleLine="true" />
 
