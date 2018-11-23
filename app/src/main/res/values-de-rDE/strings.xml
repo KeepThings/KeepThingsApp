@@ -16,4 +16,5 @@
     <string name="company">Company</string>
     <string name="blog">Blog</string>
     <string name="github">GitHub</string>
+    <string name="settings">Einstellungen</string>
 </resources>
