@@ -31,24 +31,20 @@ public class CustomAdapter extends ArrayAdapter<LentOutEntry> implements View.On
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
 
-        final View result;
-
         if (convertView == null) {
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.lent_out_entry, parent, false);
-            viewHolder.txtTitle = convertView.findViewById(R.id.title);
-            viewHolder.txtPerson = convertView.findViewById(R.id.person);
-            viewHolder.txtDateTo = convertView.findViewById(R.id.dateto);
-            viewHolder.txtDateFrom = convertView.findViewById(R.id.datefrom);
+            viewHolder.txtTitle = convertView.findViewById(R.id.item_title);
+            viewHolder.txtPerson = convertView.findViewById(R.id.item_person);
+            viewHolder.txtDateTo = convertView.findViewById(R.id.item_dateto);
+            viewHolder.txtDateFrom = convertView.findViewById(R.id.item_datefrom);
 
-            result = convertView;
 
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
-            result = convertView;
         }
 
 
