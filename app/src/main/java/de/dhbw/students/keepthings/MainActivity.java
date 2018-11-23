@@ -118,6 +118,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 githubIntent.setData(Uri.parse(githubUrl));
                 startActivity(githubIntent);
                 break;
+            case R.id.nav_settings:
+                
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
