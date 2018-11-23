@@ -28,7 +28,6 @@
                     android:id="@+id/nav_github"
                     android:icon="@drawable/ic_github_logo"
                     android:title="@string/github" />
-
             </group>
         </menu>
     </item>

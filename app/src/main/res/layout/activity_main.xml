@@ -18,8 +18,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
             android:elevation="4dp"
+            android:background="@color/colorToolbar"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -27,7 +27,7 @@
                 android:id="@+id/toolbar_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:gravity="left"
                 android:src="@mipmap/keep_things_schrift" />
         </android.support.v7.widget.Toolbar>
 
@@ -44,5 +44,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
+        android:background="@color/colorBackground"
         app:menu="@menu/draw_menu" />
 </android.support.v4.widget.DrawerLayout>
