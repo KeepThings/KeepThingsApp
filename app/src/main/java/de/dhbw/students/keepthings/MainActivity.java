@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -79,8 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 githubIntent.setData(Uri.parse(githubUrl));
                 startActivity(githubIntent);
                 break;
-
-
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

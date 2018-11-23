@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:fontFamily="@font/raleway_light_italic"
         android:text="title"
-        android:textColor="@color/colorText"
+        android:textColor="@color/colorMainText"
         android:textSize="50px"
         android:textStyle="bold" />
 
@@ -25,6 +25,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/raleway_light_italic"
         android:text="person"
+        android:textColor="@color/colorDescriptionText"
         android:textSize="38px" />
 
     <TextView
@@ -37,6 +38,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/raleway_light_italic"
         android:text="dateTo"
+        android:textColor="@color/colorDescriptionText"
         android:textSize="50px"
         android:textStyle="bold" />
 
@@ -49,6 +51,7 @@
         android:layout_alignParentEnd="true"
         android:fontFamily="@font/raleway_light_italic"
         android:text="dateFrom"
+        android:textColor="@color/colorDescriptionText"
         android:textSize="38px" />
 
 </RelativeLayout>
