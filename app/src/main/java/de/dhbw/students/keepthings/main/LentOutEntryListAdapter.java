@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.main.LentOutEntry;
+
 
 public class CustomAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {
 

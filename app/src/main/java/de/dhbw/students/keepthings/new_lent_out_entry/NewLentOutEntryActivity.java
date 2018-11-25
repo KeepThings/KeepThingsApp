@@ -3,8 +3,8 @@ package de.dhbw.students.keepthings;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -44,12 +44,11 @@ public class NewEntryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_entry);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setIcon(R.mipmap.keep_things_schrift);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
+        Toolbar toolbar = findViewById(R.id.toolbar_new_entry);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
         dateFromView = findViewById(R.id.date_from_edit);
         calendar = Calendar.getInstance();
         fromYear = calendar.get(Calendar.YEAR);

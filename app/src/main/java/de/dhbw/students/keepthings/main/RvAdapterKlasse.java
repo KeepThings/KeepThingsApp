@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHolderClass> {
+public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHolderClass> {
 
     @NonNull
     @Override
@@ -26,12 +26,7 @@ class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHolderCla
         viewHolderClass.itemDateTo.setText(MainActivity.itemDateTo.get(i));
         viewHolderClass.itemDateFrom.setText(MainActivity.itemDateFrom.get(i));
 
-        viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainActivity.textView.setText(MainActivity.itemTitle.get(i));
-            }
-        });
+        viewHolderClass.itemView.setOnClickListener(view -> MainActivity.textView.setText(MainActivity.itemTitle.get(i)));
 
     }
 

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+
+import de.dhbw.students.keepthings.NewEntryActivity;
+import de.dhbw.students.keepthings.R;
 
 public class LendOutFragment extends Fragment {
 
@@ -32,8 +35,6 @@ public class LendOutFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
 
 
-
-
         recyclerView = rootView.findViewById(R.id.recycler_view_test);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -46,12 +47,9 @@ public class LendOutFragment extends Fragment {
 
 
         fab = rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(rootView.getContext(), NewEntryActivity.class);
-                startActivity(i);
-            }
+        fab.setOnClickListener(view -> {
+            Intent i = new Intent(rootView.getContext(), NewEntryActivity.class);
+            startActivity(i);
         });
 
         return rootView;

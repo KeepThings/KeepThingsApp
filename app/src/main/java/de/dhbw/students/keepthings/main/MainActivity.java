@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.main.LendOutFragment;
+import de.dhbw.students.keepthings.main.LentOutEntry;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     static ArrayList<String> itemTitle;
     static ArrayList<String> itemPerson;
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         drawer = findViewById(R.id.draw_layout_main);
 
@@ -119,7 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(githubIntent);
                 break;
             case R.id.nav_settings:
-                
+                Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(settings);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
