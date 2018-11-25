@@ -33,49 +33,49 @@ public class ApiCommands {
         ApiGetUsersConnection api = new ApiGetUsersConnection(url,4,activity);
         api.execute(url);
     }
-    public void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, Date DATE_FROM, Date DATE_TO){
+    public void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, Date DATE_FROM, Date DATE_TO, Activity activity){
         String url = server+"addEntry.php?"+"ITEM_NAME="+ITEM_NAME+"&ITEM_DESC="+ITEM_DESC+"&USER_ID="+USER_ID+"&BORROWER="+BORROWER+"&DATE_FROM="+DATE_FROM+"&DATE_TO="+DATE_TO;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void addRequest(String ITEM_NAME, String ITEM_DESC, int USER_ID, Date DATE_FROM, Date DATE_TO){
+    public void addRequest(String ITEM_NAME, String ITEM_DESC, int USER_ID, Date DATE_FROM, Date DATE_TO, Activity activity){
         String url = server+"addRequest.php?"+"ITEM_NAME="+ITEM_NAME+"&ITEM_DESC="+ITEM_DESC+"&USER_ID="+USER_ID+"&DATE_FROM="+DATE_FROM+"&DATE_TO="+DATE_TO;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void deleteMessage(int MID){
+    public void deleteMessage(int MID, Activity activity){
         String url = server+"deleteMessage.php?"+"MID="+MID;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void deleteUser(int UID){
+    public void deleteUser(int UID, Activity activity){
         String url = server+"deleteUser.php?"+"UID="+UID;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void deleteUserContacts(int UID){
+    public void deleteUserContacts(int UID, Activity activity){
         String url = server+"deleteUserContacts.php?"+"UID="+UID;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void deletedeleteUserItem(int IID){
+    public void deletedeleteUserItem(int IID, Activity activity){
         String url = server+"deleteUserItem.php?"+"IID="+IID;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void updateUserItems(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, Date DATE_FROM, Date DATE_TO){
+    public void updateUserItems(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, Date DATE_FROM, Date DATE_TO, Activity activity){
         String url = server+"updateUserItems.php?"+"ITEM_NAME="+ITEM_NAME+"&ITEM_DESC="+ITEM_DESC+"&USER_ID="+USER_ID+"&BORROWER="+BORROWER+"&DATE_FROM="+DATE_FROM+"&DATE_TO="+DATE_TO;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void updateMarketplaceItems(String ITEM_NAME, String ITEM_DESC, int USER_ID, Date DATE_FROM, Date DATE_TO){
+    public void updateMarketplaceItems(String ITEM_NAME, String ITEM_DESC, int USER_ID, Date DATE_FROM, Date DATE_TO, Activity activity){
         String url = server+"updateMarketplaceItems.php?"+"ITEM_NAME="+ITEM_NAME+"&ITEM_DESC="+ITEM_DESC+"&USER_ID="+USER_ID+"&DATE_FROM="+DATE_FROM+"&DATE_TO="+DATE_TO;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
-    public void updateUsers(String NAME, String FIRST_NAME, String EMAIL, String TEL_NR, String USERNAME, String TYPE, Boolean VERIFIED, int UID){
+    public void updateUsers(String NAME, String FIRST_NAME, String EMAIL, String TEL_NR, String USERNAME, String TYPE, Boolean VERIFIED, int UID, Activity activity){
         String url = server+"updateMarketplaceItems.php?"+"NAME="+NAME+"&=FIRST_NAME"+FIRST_NAME+"&=E-MAIL"+EMAIL+"&=TEL_NR"+TEL_NR+"&=USRNAME"+USERNAME+"&=TYPE"+TYPE+"&=UID"+UID;
-        ApiSetConnection api = new ApiSetConnection(url);
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 6,activity);
         api.execute(url);
     }
 }

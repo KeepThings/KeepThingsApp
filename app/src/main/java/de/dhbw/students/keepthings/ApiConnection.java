@@ -17,28 +17,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray> {
+public class ApiConnection extends AsyncTask<String, Integer, JSONArray> {
 
-    private final String LOG_TAG = ApiGetUsersConnection.class.getSimpleName();
-    private int urlcase;
-    private URL url;
-    private HttpURLConnection connection = null;
-    private BufferedReader reader = null;
-    private Activity activity;
+    protected int urlcase;
+    protected URL url;
+    protected HttpURLConnection connection = null;
+    protected BufferedReader reader = null;
 
-    public ApiGetUsersConnection(String purl, int urlcase, Activity activity) {
-        try {
-            url = new URL(purl);
-            this.urlcase = urlcase;
-            this.activity = activity;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     @Override
     protected JSONArray doInBackground(String... strings) {
-
 
         try {
 
@@ -130,26 +119,7 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
     }
 
     @Override
-    protected void onProgressUpdate(Integer... values) {
-
-        // Auf dem Bildschirm geben wir eine Statusmeldung aus, immer wenn
-        // publishProgress(int...) in doInBackground(String...) aufgerufen wird
-        /*Toast.makeText(activity, values[0] + " von " + values[1] + " geladen",
-                Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
     protected void onPostExecute(JSONArray strings) {
-        this.activity.setListe(listeMessage);
 
-
-        // Wir löschen den Inhalt des ArrayAdapters und fügen den neuen Inhalt ein
-        // Der neue Inhalt ist der Rückgabewert von doInBackground(String...) also
-        // der StringArray gefüllt mit Beispieldaten
-
-        // Hintergrundberechnungen sind jetzt beendet, darüber informieren wir den Benutzer
-        /*Toast.makeText(activity, "Aktiendaten vollständig geladen!",
-                Toast.LENGTH_SHORT).show();*/
     }
 }
