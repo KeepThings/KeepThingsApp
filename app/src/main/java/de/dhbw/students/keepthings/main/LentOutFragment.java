@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import de.dhbw.students.keepthings.NewEntryActivity;
+import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
 import de.dhbw.students.keepthings.R;
 
-public class LendOutFragment extends Fragment {
+public class LentOutFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
@@ -48,7 +48,7 @@ public class LendOutFragment extends Fragment {
 
         fab = rootView.findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
-            Intent i = new Intent(rootView.getContext(), NewEntryActivity.class);
+            Intent i = new Intent(rootView.getContext(), NewLentOutEntryActivity.class);
             startActivity(i);
         });
 

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.marketplace;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +9,13 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.main.LentOutEntryListAdapter;
+import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.main.LentOutEntry;
 
 public class MarketplaceFragment extends Fragment {
 
-    private static CustomAdapter adapter;
+    private static LentOutEntryListAdapter adapter;
     private ArrayList<LentOutEntry> dataModels;
     private ListView merketplaceEntryList;
 
@@ -44,7 +46,7 @@ public class MarketplaceFragment extends Fragment {
 
         merketplaceEntryList = rootView.findViewById(R.id.marketplace_entry_list);
 
-        adapter = new CustomAdapter(dataModels, rootView.getContext());
+        adapter = new LentOutEntryListAdapter(dataModels, rootView.getContext());
 
         merketplaceEntryList.setAdapter(adapter);
 

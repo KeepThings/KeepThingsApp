@@ -1,7 +1,4 @@
-package de.dhbw.students.keepthings;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+package de.dhbw.students.keepthings.api;
 
 import java.util.Date;
 

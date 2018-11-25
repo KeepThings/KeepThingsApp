@@ -14,15 +14,6 @@
         android:layout_margin="16dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway_light_italic"
-            android:text="@string/stringNewLentOutEntry"
-            android:textColor="@color/colorMainText"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
         <EditText
             android:id="@+id/title_edit"
             android:layout_width="match_parent"

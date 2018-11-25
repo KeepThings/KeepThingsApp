@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorBackground"
     tools:context=".main.MainActivity"
     tools:openDrawer="start">
 
@@ -15,7 +16,7 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_new_entry"
+            android:id="@+id/toolbar_settings"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorToolbar"
@@ -27,17 +28,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raleway_light_italic"
-                android:text="@string/stringNewLentOutEntry"
+                android:text="@string/settings"
                 android:textColor="@color/colorToolbarText"
+                android:gravity="start"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
 
-        <fragment
-            android:id="@+id/lendoutfragment_container"
-            android:name="de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -48,3 +46,4 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/draw_menu" />
 </android.support.v4.widget.DrawerLayout>
+

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.main;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,8 +16,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import de.dhbw.students.keepthings.main.LendOutFragment;
-import de.dhbw.students.keepthings.main.LentOutEntry;
+import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
+import de.dhbw.students.keepthings.R;
+import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     static ArrayList<String> itemTitle;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-                new LendOutFragment()).commit();
+                new LentOutFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_lend_out_list);
 
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()) {
             case R.id.nav_lend_out_list:
                 getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-                        new LendOutFragment()).commit();
+                        new LentOutFragment()).commit();
                 break;
             case R.id.nav_marketplace:
                 getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
