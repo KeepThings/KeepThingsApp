@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.settings;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

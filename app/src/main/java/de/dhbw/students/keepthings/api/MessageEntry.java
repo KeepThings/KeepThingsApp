@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 public class MessageEntry {
     private int MESSAGE_ID;

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 public class ItemEntry {
     private int ITEM_ID;

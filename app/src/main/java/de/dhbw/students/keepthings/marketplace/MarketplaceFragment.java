@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.marketplace;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,9 +9,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import de.dhbw.students.keepthings.LentOutEntryListAdapter;
 import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.LentOutEntry;
+import de.dhbw.students.keepthings.main.LentOutEntryListAdapter;
+import de.dhbw.students.keepthings.main.LentOutEntry;
 
 public class MarketplaceFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.new_lent_out_entry;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
