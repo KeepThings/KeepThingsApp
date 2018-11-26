@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,10 +15,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
-import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     static ArrayList<String> itemTitle;

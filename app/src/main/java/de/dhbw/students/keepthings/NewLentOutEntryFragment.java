@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.new_lent_out_entry;
+package de.dhbw.students.keepthings;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

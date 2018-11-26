@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".main.MainActivity"
+    tools:context=".MainActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -35,7 +35,7 @@
 
         <fragment
             android:id="@+id/lendoutfragment_container"
-            android:name="de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryFragment"
+            android:name="de.dhbw.students.keepthings.NewLentOutEntryFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

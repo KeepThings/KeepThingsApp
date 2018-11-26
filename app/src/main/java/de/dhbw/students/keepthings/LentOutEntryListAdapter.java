@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings;
 
 
 import android.content.Context;
@@ -9,9 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.main.LentOutEntry;
 
 
 public class LentOutEntryListAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {

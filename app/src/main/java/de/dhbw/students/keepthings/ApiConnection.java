@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.api;
+package de.dhbw.students.keepthings;
 
 import android.os.AsyncTask;
 

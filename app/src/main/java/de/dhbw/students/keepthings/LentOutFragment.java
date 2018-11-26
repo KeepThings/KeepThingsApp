@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-
-import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
-import de.dhbw.students.keepthings.R;
 
 public class LentOutFragment extends Fragment {
 
