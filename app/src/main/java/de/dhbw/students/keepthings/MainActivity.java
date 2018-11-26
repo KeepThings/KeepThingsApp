@@ -22,24 +22,24 @@ import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
 import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static TextView textView;
     static ArrayList<String> itemTitle;
     static ArrayList<String> itemPerson;
     static ArrayList<String> itemDateTo;
     static ArrayList<String> itemDateFrom;
     static ArrayList<LentOutEntry> lentOutEntrys;
-    public static TextView textView;
     private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(getResources().getInteger(R.integer.dark_theme_setting_key));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
         lentOutEntrys = new ArrayList<>();
 
-        lentOutEntrys.add(new LentOutEntry("title", "person", "dateTo", "dateFrom"));
+        lentOutEntrys.add(new LentOutEntry("title" + getResources().getInteger(R.integer.dark_theme_setting_key), "person", "dateTo", "dateFrom"));
         lentOutEntrys.add(new LentOutEntry("Pfanne", "Max Mustermann", "30 Oct 18", "27 Oct 18"));
         lentOutEntrys.add(new LentOutEntry("30 Euro", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
         lentOutEntrys.add(new LentOutEntry("Fahrradpumpe", "Max Mustermann", "30 Oct 18", "26 Oct 18"));
