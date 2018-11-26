@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".main.MainActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -25,7 +25,7 @@
 
             <ImageView
                 android:id="@+id/toolbar_image"
-                android:layout_width="match_parent"
+                android:layout_width="465px"
                 android:layout_height="match_parent"
                 android:gravity="left"
                 android:src="@mipmap/keep_things_schrift" />
@@ -33,7 +33,7 @@
 
         <fragment
             android:id="@+id/lendoutfragment_container"
-            android:name="de.dhbw.students.keepthings.MainFragment"
+            android:name="de.dhbw.students.keepthings.main.MainFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

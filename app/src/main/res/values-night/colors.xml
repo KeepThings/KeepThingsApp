@@ -10,6 +10,7 @@
     <color name="colorFabIcon">#ffffff</color>
     <color name="colorButton">#004669</color>
     <color name="colorNavBar">#004669</color>
+    <color name="colorToolbarText">#ffffff</color>
 
 
 </resources>

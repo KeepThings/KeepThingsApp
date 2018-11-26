@@ -1,14 +1,16 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 import org.json.JSONArray;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ApiLentOutFragment extends ApiConnection {
-    protected LendOutFragment fragment;
+import de.dhbw.students.keepthings.main.LentOutFragment;
 
-    public ApiLentOutFragment(String purl, int urlcase, LendOutFragment fragment) {
+public class ApiLentOutFragment extends ApiConnection {
+    protected LentOutFragment fragment;
+
+    public ApiLentOutFragment(String purl, int urlcase, LentOutFragment fragment) {
         try {
             super.url = new URL(purl);
             super.urlcase = urlcase;
@@ -17,6 +19,7 @@ public class ApiLentOutFragment extends ApiConnection {
             e.printStackTrace();
         }
     }
+
     @Override
     protected void onPostExecute(JSONArray strings) {
         //fragment.setListe(listeMessage);

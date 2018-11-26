@@ -1,6 +1,5 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 
 import org.json.JSONArray;
@@ -15,15 +14,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
-public class ApiConnection extends AsyncTask<String, Integer, JSONArray> {
+public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray> {
 
     protected int urlcase;
     protected URL url;
     protected HttpURLConnection connection = null;
     protected BufferedReader reader = null;
-
 
 
     @Override
@@ -119,7 +116,5 @@ public class ApiConnection extends AsyncTask<String, Integer, JSONArray> {
     }
 
     @Override
-    protected void onPostExecute(JSONArray strings) {
-
-    }
+    protected abstract void onPostExecute(JSONArray strings);
 }
