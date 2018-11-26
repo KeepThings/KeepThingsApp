@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.MainActivity;
+import de.dhbw.students.keepthings.RvAdapterKlasse;
 import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
 import de.dhbw.students.keepthings.R;
 
