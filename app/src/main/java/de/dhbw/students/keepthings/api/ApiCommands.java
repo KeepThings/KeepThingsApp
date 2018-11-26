@@ -1,7 +1,6 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 import android.app.Activity;
-
 import java.util.Date;
 
 public class ApiCommands {

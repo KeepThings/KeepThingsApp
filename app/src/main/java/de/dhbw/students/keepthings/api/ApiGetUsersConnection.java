@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -15,7 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray> {
 

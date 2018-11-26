@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.main;
 
 
 import android.content.Context;
@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.R;
 
-public class CustomAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {
+
+public class LentOutEntryListAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {
 
 
-    public CustomAdapter(ArrayList<LentOutEntry> data, Context context) {
+    public LentOutEntryListAdapter(ArrayList<LentOutEntry> data, Context context) {
         super(context, R.layout.lent_out_entry, data);
 
     }

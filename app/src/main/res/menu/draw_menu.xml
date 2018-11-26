@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group_1"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_lend_out_list"
             android:icon="@drawable/ic_lent_out"
@@ -12,17 +14,13 @@
             android:id="@+id/nav_marketplace"
             android:icon="@drawable/ic_marketplace"
             android:title="@string/marketplace" />
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/settings" />
     </group>
 
-    <item android:title="@string/company">
-        <menu>
-
-            <group android:checkableBehavior="none">
-
+    <group
+        android:id="@+id/group_2"
+        android:checkableBehavior="none">
+        <item android:title="@string/about">
+            <menu>
                 <item
                     android:id="@+id/nav_wordpress"
                     android:icon="@drawable/ic_wordpress_logo"
@@ -32,7 +30,16 @@
                     android:id="@+id/nav_github"
                     android:icon="@drawable/ic_github_logo"
                     android:title="@string/github" />
-            </group>
-        </menu>
-    </item>
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/group_3"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+    </group>
 </menu>

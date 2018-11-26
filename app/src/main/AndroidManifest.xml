@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewEntryActivity" />
+        <activity android:name=".new_lent_out_entry.NewLentOutEntryActivity" />
+        <activity android:name=".settings.SettingsActivity"></activity>
     </application>
 
 </manifest>

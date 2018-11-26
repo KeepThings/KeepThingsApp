@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.api;
 
 import android.os.AsyncTask;
 
@@ -13,18 +13,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
+public class ApiConnection extends AsyncTask<String, Integer, JSONArray> {
 
-    private final String LOG_TAG = ApiGetUsersConnection.class.getSimpleName();
+    private final String LOG_TAG = ApiConnection.class.getSimpleName();
 
     private URL url;
     private HttpURLConnection connection = null;
     private BufferedReader reader = null;
 
-    public ApiSetConnection(String purl) {
+    public ApiConnection(String purl) {
         try {
             url = new URL(purl);
         } catch (MalformedURLException e) {
@@ -51,11 +49,6 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
 
             JSONObject parentObjekt = new JSONObject(finalJson);
             JSONArray parentArray = parentObjekt.getJSONArray("result");
-
-            List<Boolean> result = new ArrayList<>();
-            result.add(parentArray.getJSONObject(0).getBoolean("success"));
-
-            //einfügen der setmethode aus der aufrufenden klasse!!!!!!
 
             return parentArray;
         } catch (MalformedURLException e) {

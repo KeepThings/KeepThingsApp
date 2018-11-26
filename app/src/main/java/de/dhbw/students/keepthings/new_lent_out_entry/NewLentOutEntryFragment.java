@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings;
+package de.dhbw.students.keepthings.new_lent_out_entry;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import de.dhbw.students.keepthings.R;
 
 public class NewLentOutEntryFragment extends Fragment {
 
