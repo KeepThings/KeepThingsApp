@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,8 +16,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.main.LentOutEntry;
+import de.dhbw.students.keepthings.main.LentOutFragment;
 import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
-import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static ArrayList<String> itemDateTo;
     static ArrayList<String> itemDateFrom;
     static ArrayList<LentOutEntry> lentOutEntrys;
-    static TextView textView;
+    public static TextView textView;
     private DrawerLayout drawer;
 
     @Override
