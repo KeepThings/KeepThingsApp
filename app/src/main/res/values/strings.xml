@@ -19,5 +19,6 @@
     <string name="blog">Blog</string>
     <string name="github">GitHub</string>
     <string name="settings">Settings</string>
+    <string name="success">Successly delivered the data!</string>
 
 </resources>

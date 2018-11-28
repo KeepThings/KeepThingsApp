@@ -1,6 +1,8 @@
 package de.dhbw.students.keepthings.api;
 
+import android.app.Activity;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.dhbw.students.keepthings.R;
+
 public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
 
     private final String LOG_TAG = ApiGetUsersConnection.class.getSimpleName();
@@ -23,8 +27,11 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
     private URL url;
     private HttpURLConnection connection = null;
     private BufferedReader reader = null;
+    private Activity activity;
 
-    public ApiSetConnection(String purl) {
+    public ApiSetConnection(String purl, Activity activity) {
+        this.activity = activity;
+
         try {
             url = new URL(purl);
         } catch (MalformedURLException e) {
@@ -67,7 +74,6 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
         }
 
 
-
         return null;
 
     }
@@ -85,12 +91,18 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
     @Override
     protected void onPostExecute(JSONArray strings) {
 
-        // Wir löschen den Inhalt des ArrayAdapters und fügen den neuen Inhalt ein
-        // Der neue Inhalt ist der Rückgabewert von doInBackground(String...) also
-        // der StringArray gefüllt mit Beispieldaten
+//        if (strings != null) {
+//            int length = strings.length();
+//            Toast.makeText(activity, "Lenght: " + length,
+//                    Toast.LENGTH_SHORT).show();
+//        }
+//        else{
+//            Toast.makeText(activity, "Null",
+//                    Toast.LENGTH_SHORT).show();
+//
+//        }
+        Toast.makeText(activity, R.string.success,
+                Toast.LENGTH_SHORT).show();
 
-        // Hintergrundberechnungen sind jetzt beendet, darüber informieren wir den Benutzer
-        /*Toast.makeText(activity, "Aktiendaten vollständig geladen!",
-                Toast.LENGTH_SHORT).show();*/
     }
 }

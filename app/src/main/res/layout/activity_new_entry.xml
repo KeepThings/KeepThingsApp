@@ -34,7 +34,7 @@
         </android.support.v7.widget.Toolbar>
 
         <fragment
-            android:id="@+id/lendoutfragment_container"
+            android:id="@+id/lendoutfragment_container_new_entry"
             android:name="de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
