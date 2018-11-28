@@ -1,9 +1,11 @@
 package de.dhbw.students.keepthings.api;
 
+import java.sql.Timestamp;
+
 public class MessageEntry {
     private int MESSAGE_ID;
     private String MESSAGE;
-    private String SENDER;
+    private int SENDER;
     private int RECEIVER_ID;
     private String SENT_TIMESTAMP;
     private boolean success;
@@ -24,11 +26,11 @@ public class MessageEntry {
         this.MESSAGE = MESSAGE;
     }
 
-    public String getSENDER() {
+    public int getSENDER() {
         return SENDER;
     }
 
-    public void setSENDER(String SENDER) {
+    public void setSENDER(int SENDER) {
         this.SENDER = SENDER;
     }
 
@@ -44,9 +46,7 @@ public class MessageEntry {
         return SENT_TIMESTAMP;
     }
 
-    public void setSENT_TIMESTAMP(String SENT_TIMESTAMP) {
-        this.SENT_TIMESTAMP = SENT_TIMESTAMP;
-    }
+    public void setSENT_TIMESTAMP(String SENT_TIMESTAMP) {this.SENT_TIMESTAMP = SENT_TIMESTAMP;}
 
     public boolean isSuccess() {
         return success;
@@ -56,7 +56,7 @@ public class MessageEntry {
         this.success = success;
     }
 
-    public MessageEntry(int MESSAGE_ID, String MESSAGE, String SENDER, int RECEIVER_ID, String SENT_TIMESTAMP, boolean success) {
+    public MessageEntry(int MESSAGE_ID, String MESSAGE, int SENDER, int RECEIVER_ID, String SENT_TIMESTAMP, boolean success) {
 
         this.MESSAGE_ID = MESSAGE_ID;
         this.MESSAGE = MESSAGE;

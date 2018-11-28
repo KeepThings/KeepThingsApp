@@ -14,6 +14,7 @@ public class UserEntry {
     private boolean success;
 
 
+
     public UserEntry(String USER_ID, String NAME, String FIRST_NAME, String PASSWORD, String e_MAIL, String TEL_NR, String USERNAME, String TYPE, boolean VERIFIED, boolean success) {
         this.USER_ID = USER_ID;
         this.NAME = NAME;
@@ -98,4 +99,8 @@ public class UserEntry {
     public void setVERIFIED(boolean VERIFIED) {
         this.VERIFIED = VERIFIED;
     }
+
+    public boolean isSuccess() {return success;}
+
+    public void setSuccess(boolean success) {this.success = success;}
 }

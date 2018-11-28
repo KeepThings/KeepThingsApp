@@ -16,16 +16,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray> {
+public class ApiGetSetConnection extends AsyncTask<String, Integer, JSONArray> {
 
-    private final String LOG_TAG = ApiGetUsersConnection.class.getSimpleName();
+    private final String LOG_TAG = ApiGetSetConnection.class.getSimpleName();
     private int urlcase;
     private URL url;
     private HttpURLConnection connection = null;
     private BufferedReader reader = null;
     private Activity activity;
 
-    public ApiGetUsersConnection(String purl, int urlcase, Activity activity) {
+    public ApiGetSetConnection(String purl, int urlcase, Activity activity) {
         try {
             url = new URL(purl);
             this.urlcase = urlcase;
@@ -81,7 +81,7 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
                                 parentArray.getJSONObject(i).getInt("ITEM_ID"),
                                 parentArray.getJSONObject(i).getString("ITEM_NAME"),
                                 parentArray.getJSONObject(i).getString("ITEM_DESC"),
-                                parentArray.getJSONObject(i).getString("USERNAME"),
+                                parentArray.getJSONObject(i).getInt("USERNAME"),
                                 parentArray.getJSONObject(i).getString("BORROWER"),
                                 parentArray.getJSONObject(i).getString("DATE_FROM"),
                                 parentArray.getJSONObject(i).getString("DATE_TO"),
@@ -95,7 +95,7 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
                         listeMessage.add(new MessageEntry(
                                 parentArray.getJSONObject(i).getInt("MESSAGE_ID"),
                                 parentArray.getJSONObject(i).getString("MESSAGE"),
-                                parentArray.getJSONObject(i).getString("SENDER"),
+                                parentArray.getJSONObject(i).getInt("SENDER"),
                                 parentArray.getJSONObject(i).getInt("RECEIVER_ID"),
                                 parentArray.getJSONObject(i).getString("SENT_TIMESTAP"),
                                 parentArray.getJSONObject(i).getBoolean("success")
@@ -131,24 +131,10 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
     @Override
     protected void onProgressUpdate(Integer... values) {
 
-        // Auf dem Bildschirm geben wir eine Statusmeldung aus, immer wenn
-        // publishProgress(int...) in doInBackground(String...) aufgerufen wird
-        /*Toast.makeText(activity, values[0] + " von " + values[1] + " geladen",
-                Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
     protected void onPostExecute(JSONArray strings) {
-        this.activity.setListe(listeMessage);
 
-
-        // Wir löschen den Inhalt des ArrayAdapters und fügen den neuen Inhalt ein
-        // Der neue Inhalt ist der Rückgabewert von doInBackground(String...) also
-        // der StringArray gefüllt mit Beispieldaten
-
-        // Hintergrundberechnungen sind jetzt beendet, darüber informieren wir den Benutzer
-        /*Toast.makeText(activity, "Aktiendaten vollständig geladen!",
-                Toast.LENGTH_SHORT).show();*/
     }
 }
