@@ -2,6 +2,7 @@ package de.dhbw.students.keepthings.api;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -28,6 +29,7 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
     private HttpURLConnection connection = null;
     private BufferedReader reader = null;
     private Activity activity;
+    List<Boolean> result;
 
     public ApiSetConnection(String purl, Activity activity) {
         this.activity = activity;
@@ -54,17 +56,14 @@ public class ApiSetConnection extends AsyncTask<String, Integer, JSONArray> {
             while ((line = reader.readLine()) != null) {
                 buffer.append(line);
             }
-            String finalJson = buffer.toString();
-
+            String finalJson = "{"+buffer.toString()+"}";
             JSONObject parentObjekt = new JSONObject(finalJson);
-            JSONArray parentArray = parentObjekt.getJSONArray("result");
+            JSONObject parentArray = parentObjekt.getJSONObject("result");
 
-            List<Boolean> result = new ArrayList<>();
-            result.add(parentArray.getJSONObject(0).getBoolean("success"));
+            result = new ArrayList<>();
+            result.add(parentArray.getBoolean("success"));
 
-            //einfügen der setmethode aus der aufrufenden klasse!!!!!!
-
-            return parentArray;
+            return null;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

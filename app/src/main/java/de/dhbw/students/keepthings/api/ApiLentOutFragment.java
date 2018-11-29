@@ -1,5 +1,7 @@
 package de.dhbw.students.keepthings.api;
 
+import android.app.Activity;
+
 import org.json.JSONArray;
 
 import java.net.MalformedURLException;
@@ -8,9 +10,9 @@ import java.net.URL;
 import de.dhbw.students.keepthings.main.LentOutFragment;
 
 public class ApiLentOutFragment extends ApiConnection {
-    protected LentOutFragment fragment;
+    protected Activity fragment;
 
-    public ApiLentOutFragment(String purl, int urlcase, LentOutFragment fragment) {
+    public ApiLentOutFragment(String purl, int urlcase, Activity fragment) {
         try {
             super.url = new URL(purl);
             super.urlcase = urlcase;

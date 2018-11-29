@@ -16,16 +16,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class ApiGetSetConnection extends AsyncTask<String, Integer, JSONArray> {
+public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray> {
 
-    private final String LOG_TAG = ApiGetSetConnection.class.getSimpleName();
+    private final String LOG_TAG = ApiGetUsersConnection.class.getSimpleName();
     private int urlcase;
     private URL url;
     private HttpURLConnection connection = null;
     private BufferedReader reader = null;
     private Activity activity;
 
-    public ApiGetSetConnection(String purl, int urlcase, Activity activity) {
+    public ApiGetUsersConnection(String purl, int urlcase, Activity activity) {
         try {
             url = new URL(purl);
             this.urlcase = urlcase;
