@@ -44,20 +44,20 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             }
             String finalJson = buffer.toString();
 
-            if (finalJson.contains("[")) { // überprüft ob die rückgabe ein Objekt ist oder ein Array an objekten
+            if (finalJson.contains("[")) { // checks if the JSON contains an array of objects or just one
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONArray parentArray = parentObjekt.getJSONArray("result");
                 switch (urlcase) {
-                    case User: //0 oder 2 bedeutet es wurde von er Api ein JSON Objekt mit mehreren Usern angefordert
+                    case User: //User means the JSON contains a list with User entrys
                         this.addUserArray(parentArray);
                         break;
-                    case Item: //1 oder 4 bedeutet es wurde von er Api ein JSON Objekt mit mehreren Items angefordert
+                    case Item: //Item means the JSON contains a list with Item entrys
                         this.addItemArray(parentArray);
                         break;
-                    case Message: //3 bedeutet es wurde von er Api ein JSON Objekt mit mehreren Messages angefordert
+                    case Message: //Message means the JSON contains a list with Message entrys
                         this.addMessageArray(parentArray);
                         break;
-                    case success: //6 bedeutet es wurde von er Api ein JSON Objekt mit mehreren "success"-Werten angefordert
+                    case success: //success means the JSON contains a list with success entrys
                         this.addSuccessArray(parentArray);
                         break;
                 }
@@ -65,7 +65,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONObject parentResultObjekt = parentObjekt.getJSONObject("result");
                 switch (urlcase) {
-                    case User: // selbe wie im anderen switch nur das hier nicht mehere User/Items/Messages/"success"-Werte angefordert wurden sondern nur eines
+                    case User:
                         this.addUserObj(parentResultObjekt);
                         break;
                     case Item:
