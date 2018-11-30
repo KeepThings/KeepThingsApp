@@ -11,10 +11,10 @@ public class ApiCommands {
 
     public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, Activity activity) {
         String url = server + "addEntry.php?" + "ITEM_NAME=" + ITEM_NAME + "&ITEM_DESC=" + ITEM_DESC + "&USER_ID=" + USER_ID + "&BORROWER=" + BORROWER + "&DATE_FROM=" + DATE_FROM + "&DATE_TO=" + DATE_TO;
-        ApiLentOutFragment api = new ApiLentOutFragment(url,6,activity); //für das LendoutFragment
+        ApiLentOutFragment api = new ApiLentOutFragment(url,UrlCase.success,activity); //für das LendoutFragment
         api.execute(url);
     }
-
+/* Muss man wie bei addEntry anpassen was für eine unterklasse von ApiConnection erstellt wird.
     public static void getUsers(String UID, String ALL, Activity activity) {
         String url = server + "getUsers.php?" + "UID=" + UID + "&ALL=" + ALL;
         ApiGetUsersConnection api = new ApiGetUsersConnection(url, 0, activity);
@@ -91,5 +91,5 @@ public class ApiCommands {
         String url = server + "updateMarketplaceItems.php?" + "NAME=" + NAME + "&=FIRST_NAME" + FIRST_NAME + "&=E-MAIL" + EMAIL + "&=TEL_NR" + TEL_NR + "&=USRNAME" + USERNAME + "&=TYPE" + TYPE + "&=UID" + UID;
         ApiSetConnection api = new ApiSetConnection(url, activity);
         api.execute(url);
-    }
+    }*/
 }
