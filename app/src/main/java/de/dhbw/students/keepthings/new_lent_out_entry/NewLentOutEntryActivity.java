@@ -90,7 +90,7 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         TextView dateFrom = findViewById(R.id.date_from_add);
         TextView dateTo = findViewById(R.id.date_to_add);
 
-        if (title.getText().toString().equals("")){
+        if (title.getText().toString().equals("")) {
             showToast("Title can't be empty");
             return;
         }
@@ -198,6 +198,7 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
+
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();

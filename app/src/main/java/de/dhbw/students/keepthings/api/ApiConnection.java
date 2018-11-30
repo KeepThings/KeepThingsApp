@@ -1,7 +1,6 @@
 package de.dhbw.students.keepthings.api;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +39,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             }
             String finalJson = buffer.toString();
 
-            if (finalJson.contains("[")){
+            if (finalJson.contains("[")) {
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONArray parentArray = parentObjekt.getJSONArray("result");
                 switch (urlcase) {
@@ -99,7 +98,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                         }
                         break;
                 }
-            } else{
+            } else {
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONObject parentArray = parentObjekt.getJSONObject("result");
                 switch (urlcase) {

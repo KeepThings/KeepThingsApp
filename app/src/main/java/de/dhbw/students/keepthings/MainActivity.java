@@ -22,12 +22,12 @@ import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
 import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static TextView textView;
     static ArrayList<String> itemTitle;
     static ArrayList<String> itemPerson;
     static ArrayList<String> itemDateTo;
     static ArrayList<String> itemDateFrom;
     static ArrayList<LentOutEntry> lentOutEntrys;
-    public static TextView textView;
     private DrawerLayout drawer;
 
     @Override

@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import de.dhbw.students.keepthings.R;
 
@@ -39,7 +38,6 @@ public class NewLentOutEntryFragment extends Fragment {
 
         return rootView;
     }
-
 
 
     @Override
