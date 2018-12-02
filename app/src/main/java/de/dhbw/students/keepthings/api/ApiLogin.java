@@ -17,6 +17,7 @@ public class ApiLogin extends ApiConnection {
     public ApiLogin(String purl, UrlCase urlcase, LoginActivity activity) {
         try {
             super.url = new URL(purl);
+            super.urlString = purl;
             super.urlcase = urlcase;
             this.activity = activity;
         } catch (MalformedURLException e) {

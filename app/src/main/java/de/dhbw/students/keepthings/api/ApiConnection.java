@@ -7,10 +7,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,6 +24,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
 
     protected UrlCase urlcase;
     protected URL url;
+    protected String urlString;
     protected HttpURLConnection connection = null;
     protected BufferedReader reader = null;
     ArrayList<UserEntry> listeUser;
@@ -31,7 +36,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
 
     @Override
     protected JSONArray doInBackground(String... strings) {
-
+        OutputStream out = null;
         try {
 
             connection = (HttpURLConnection) url.openConnection();
@@ -44,7 +49,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                 buffer.append(line);
             }
             String finalJson = buffer.toString();
-
+            Log.e("JSON",finalJson);
             if (finalJson.contains("[")) { // checks if the JSON contains an array of objects or just one
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONArray parentArray = parentObjekt.getJSONArray("result");
