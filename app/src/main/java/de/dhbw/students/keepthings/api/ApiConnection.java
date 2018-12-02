@@ -22,15 +22,14 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     protected URL url;
     protected HttpURLConnection connection = null;
     protected BufferedReader reader = null;
-    ArrayList<UserEntry> listeUser;
-    ArrayList<ItemEntry> listeItem;
-    ArrayList<MessageEntry> listeMessage;
-    ArrayList<Boolean> listeSet;
+    ArrayList<UserEntry> userList;
+    ArrayList<ItemEntry> itemList;
+    ArrayList<MessageEntry> messageList;
+    ArrayList<Boolean> successList;
 
 
     @Override
     protected JSONArray doInBackground(String... strings) {
-
         try {
 
             connection = (HttpURLConnection) url.openConnection();
@@ -42,8 +41,11 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             while ((line = reader.readLine()) != null) {
                 buffer.append(line);
             }
-            String finalJson = buffer.toString();
 
+            String finalJson = buffer.toString();
+            if (!finalJson.startsWith("{")){
+                finalJson="{"+finalJson+"}";
+            }
             if (finalJson.contains("[")) { // checks if the JSON contains an array of objects or just one
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONArray parentArray = parentObjekt.getJSONArray("result");
@@ -96,18 +98,18 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
 
     protected void addUserArray(JSONArray parentArray) {
         try {
-            listeUser = new ArrayList<>();
+            userList = new ArrayList<>();
             for (int i = 0; i < parentArray.length(); i++) {
-                listeUser.add(new UserEntry(
+                userList.add(new UserEntry(
                         parentArray.getJSONObject(i).getString("USER_ID"),
                         parentArray.getJSONObject(i).getString("NAME"),
                         parentArray.getJSONObject(i).getString("FIRST_NAME"),
                         parentArray.getJSONObject(i).getString("PASSWORD"),
-                        parentArray.getJSONObject(i).getString("E-MAIL"),
-                        parentArray.getJSONObject(i).getString("TEL-NR"),
+                        parentArray.getJSONObject(i).getString("EMAIL"),
+                        parentArray.getJSONObject(i).getString("TEL_NR"),
                         parentArray.getJSONObject(i).getString("USERNAME"),
                         parentArray.getJSONObject(i).getString("TYPE"),
-                        parentArray.getJSONObject(i).getBoolean("VERIFIED"),
+                        parentArray.getJSONObject(i).getInt("VERIFIED"),
                         parentArray.getJSONObject(i).getBoolean("success")
                 ));
             }
@@ -117,13 +119,13 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addItemArray(JSONArray parentArray) {
         try {
-            listeItem = new ArrayList<>();
+            itemList = new ArrayList<>();
             for (int i = 0; i < parentArray.length(); i++) {
-                listeItem.add(new ItemEntry(
+                itemList.add(new ItemEntry(
                         parentArray.getJSONObject(i).getInt("ITEM_ID"),
                         parentArray.getJSONObject(i).getString("ITEM_NAME"),
                         parentArray.getJSONObject(i).getString("ITEM_DESC"),
-                        parentArray.getJSONObject(i).getInt("USERNAME"),
+                        parentArray.getJSONObject(i).getString("OWNER"),
                         parentArray.getJSONObject(i).getString("BORROWER"),
                         parentArray.getJSONObject(i).getString("DATE_FROM"),
                         parentArray.getJSONObject(i).getString("DATE_TO"),
@@ -136,9 +138,9 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addMessageArray(JSONArray parentArray) {
         try {
-            listeMessage = new ArrayList<>();
+            messageList = new ArrayList<>();
             for (int i = 0; i < parentArray.length(); i++) {
-                listeMessage.add(new MessageEntry(
+                messageList.add(new MessageEntry(
                         parentArray.getJSONObject(i).getInt("MESSAGE_ID"),
                         parentArray.getJSONObject(i).getString("MESSAGE"),
                         parentArray.getJSONObject(i).getInt("SENDER"),
@@ -153,9 +155,9 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addSuccessArray(JSONArray parentArray) {
         try {
-            listeSet = new ArrayList<>();
+            successList = new ArrayList<>();
             for (int i = 0; i < parentArray.length(); i++) {
-                listeSet.add(
+                successList.add(
                         parentArray.getJSONObject(i).getBoolean("success")
                 );
             }
@@ -165,18 +167,18 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addUserObj(JSONObject parentResultObjekt) {
         try {
-            listeUser = new ArrayList<>();
+            userList = new ArrayList<>();
             for (int i = 0; i < parentResultObjekt.length(); i++) {
-                listeUser.add(new UserEntry(
+                userList.add(new UserEntry(
                         parentResultObjekt.getString("USER_ID"),
                         parentResultObjekt.getString("NAME"),
                         parentResultObjekt.getString("FIRST_NAME"),
                         parentResultObjekt.getString("PASSWORD"),
-                        parentResultObjekt.getString("E-MAIL"),
-                        parentResultObjekt.getString("TEL-NR"),
+                        parentResultObjekt.getString("EMAIL"),
+                        parentResultObjekt.getString("TEL_NR"),
                         parentResultObjekt.getString("USERNAME"),
                         parentResultObjekt.getString("TYPE"),
-                        parentResultObjekt.getBoolean("VERIFIED"),
+                        parentResultObjekt.getInt("VERIFIED"),
                         parentResultObjekt.getBoolean("success")
                 ));
             }
@@ -186,13 +188,13 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addItemObj(JSONObject parentResultObjekt) {
         try {
-            listeItem = new ArrayList<>();
+            itemList = new ArrayList<>();
             for (int i = 0; i < parentResultObjekt.length(); i++) {
-                listeItem.add(new ItemEntry(
+                itemList.add(new ItemEntry(
                         parentResultObjekt.getInt("ITEM_ID"),
                         parentResultObjekt.getString("ITEM_NAME"),
                         parentResultObjekt.getString("ITEM_DESC"),
-                        parentResultObjekt.getInt("USERNAME"),
+                        parentResultObjekt.getString("OWNER"),
                         parentResultObjekt.getString("BORROWER"),
                         parentResultObjekt.getString("DATE_FROM"),
                         parentResultObjekt.getString("DATE_TO"),
@@ -205,9 +207,9 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addMessageObj(JSONObject parentResultObjekt) {
         try {
-            listeMessage = new ArrayList<>();
+            messageList = new ArrayList<>();
             for (int i = 0; i < parentResultObjekt.length(); i++) {
-                listeMessage.add(new MessageEntry(
+                messageList.add(new MessageEntry(
                         parentResultObjekt.getInt("MESSAGE_ID"),
                         parentResultObjekt.getString("MESSAGE"),
                         parentResultObjekt.getInt("SENDER"),
@@ -222,9 +224,9 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     }
     protected void addSuccessObj(JSONObject parentResultObjekt) {
         try {
-            listeSet = new ArrayList<>();
+            successList = new ArrayList<>();
             for (int i = 0; i < parentResultObjekt.length(); i++) {
-                listeSet.add(
+                successList.add(
                         parentResultObjekt.getBoolean("success")
                 );
             }

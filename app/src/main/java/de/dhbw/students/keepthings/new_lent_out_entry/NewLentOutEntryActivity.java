@@ -194,12 +194,12 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
                 .append(month).append("-").append(year));
     }
 
-    private void showToast(int message) {
+    public void showToast(int message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
 
-    private void showToast(String message) {
+    public void showToast(String message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
