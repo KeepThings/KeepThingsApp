@@ -28,7 +28,8 @@ public class ApiLogin extends ApiConnection {
         //activity.setmAuthTask(null);
         activity.showProgress(false);
 
-        if (super.listeSet.get(0)== true) {
+        if (super.loginList.get(0).isSuccess()) {
+            //set the Loged in User to the UserID
             activity.startActivity(new Intent(activity, MainActivity.class));
         } else {
             activity.getmPasswordView().setError(activity.getString(R.string.error_incorrect_password));
