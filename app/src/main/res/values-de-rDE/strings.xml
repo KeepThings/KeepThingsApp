@@ -17,4 +17,13 @@
     <string name="github">GitHub</string>
     <string name="settings">Einstellungen</string>
     <string name="success">Die Daten wurden erfolgreich übermittelt!</string>
+    <string name="prompt_email">E-Mail</string>
+    <string name="prompt_password">Passwort (optional)</string>
+    <string name="action_sign_in">Einloggen oder regestrieren</string>
+    <string name="action_sign_in_short">Einloggen</string>
+    <string name="error_invalid_email">Die E-Mail-Adresse ist ungültig</string>
+    <string name="error_invalid_password">Das Passwort ist zu kurz</string>
+    <string name="error_incorrect_password">Das Passwort ist inkorrekt</string>
+    <string name="error_field_required">Dieses Feld wird benötigt</string>
+    <string name="permission_rationale">Für die Bereitstellung von E-Mails sind Kontaktberechtigungen erforderlich</string>
 </resources>
