@@ -14,11 +14,11 @@ import de.dhbw.students.keepthings.R;
 
 public class ApiLogin extends ApiConnection {
     protected LoginActivity activity;
-    public ApiLogin(String purl, UrlCase urlcase, LoginActivity fragment) {
+    public ApiLogin(String purl, UrlCase urlcase, LoginActivity activity) {
         try {
             super.url = new URL(purl);
             super.urlcase = urlcase;
-            this.activity = fragment;
+            this.activity = activity;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -28,7 +28,7 @@ public class ApiLogin extends ApiConnection {
         //activity.setmAuthTask(null);
         activity.showProgress(false);
 
-        if (false) {//super.listeSet.get(0)==
+        if (true) {//super.listeSet.get(0)== true
             activity.startActivity(new Intent(activity, MainActivity.class));
         } else {
             activity.getmPasswordView().setError(activity.getString(R.string.error_incorrect_password));
