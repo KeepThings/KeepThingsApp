@@ -1,5 +1,7 @@
 package de.dhbw.students.keepthings.api;
 
+import android.app.Activity;
+
 import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
 
 public class ApiCommands {

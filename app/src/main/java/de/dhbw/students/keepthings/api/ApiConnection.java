@@ -46,6 +46,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             if (!finalJson.startsWith("{")){
                 finalJson="{"+finalJson+"}";
             }
+            Log.e("JSON",finalJson);
             if (finalJson.contains("[")) { // checks if the JSON contains an array of objects or just one
                 JSONObject parentObjekt = new JSONObject(finalJson);
                 JSONArray parentArray = parentObjekt.getJSONArray("result");
