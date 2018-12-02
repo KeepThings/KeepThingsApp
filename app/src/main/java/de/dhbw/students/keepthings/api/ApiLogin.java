@@ -28,7 +28,7 @@ public class ApiLogin extends ApiConnection {
         //activity.setmAuthTask(null);
         activity.showProgress(false);
 
-        if (true) {//super.listeSet.get(0)== true
+        if (super.listeSet.get(0)== true) {
             activity.startActivity(new Intent(activity, MainActivity.class));
         } else {
             activity.getmPasswordView().setError(activity.getString(R.string.error_incorrect_password));
