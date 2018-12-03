@@ -5,12 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
-import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -31,10 +29,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.dhbw.students.keepthings.MainActivity;
 import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.api.ApiCommands;
-import de.dhbw.students.keepthings.api.ApiLogin;
+import de.dhbw.students.keepthings.api.ApiConnectionPost;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -46,7 +43,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             "foo@example.com:hello", "bar@example.com:world"
     };
 
-    private ApiLogin mAuthTask = null;
+    private ApiConnectionPost mAuthTask = null;
 
     // UI references.
     private AutoCompleteTextView mEmailView;

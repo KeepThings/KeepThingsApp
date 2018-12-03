@@ -15,8 +15,9 @@ public class ApiCommands {
         api.execute(url);
     }
     public static void login(String EMAIL, String PASSWORD, LoginActivity activity) {
-        String url = server + "auth.php?" + "email=" + EMAIL + "&password=" + PASSWORD;
-        ApiLogin api = new ApiLogin(url, UrlCase.Login, activity); //für das LendoutFragment
+        String url = server + "auth.php?";
+        String data = "email="+EMAIL+"&password="+PASSWORD;
+        ApiConnectionPost api = new ApiConnectionPost(url, data, UrlCase.Login, activity);
         api.execute(url);
     }
 /* Muss man wie bei addEntry anpassen was für eine unterklasse von ApiConnection erstellt wird.

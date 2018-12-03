@@ -34,6 +34,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
     ArrayList<LoginEntry> loginList;
 
 
+
     @Override
     protected JSONArray doInBackground(String... strings) {
         OutputStream out = null;
@@ -83,9 +84,6 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                     case success:
                         this.addSuccessObj(parentResultObjekt);
                         break;
-                    case Login:
-                        this.addLoginObj(parentResultObjekt);
-                        break;
                 }
             }
 
@@ -102,19 +100,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
         return null;
 
     }
-    protected void addLoginObj(JSONObject parentResultObjekt){
-        try {
-            loginList = new ArrayList<>();
-            for (int i = 0; i < parentResultObjekt.length(); i++) {
-                loginList.add(new LoginEntry(
-                        parentResultObjekt.getBoolean("success"),
-                        parentResultObjekt.getInt("uid")
-                ));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+
     protected void addUserArray(JSONArray parentArray) {
         try {
             listeUser = new ArrayList<>();
