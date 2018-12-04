@@ -23,14 +23,6 @@ public class ApiAddLentOutItem extends ApiConnection {
 
     @Override
     protected void onPostExecute(JSONArray strings) {
-        //activity.showToast(super.successList.get(0)+"");
-        //fragment.setListe(messageList);
-        //activity.showToast(super.successList.get(0)+"");
-        //Log.e("User 0",super.userList.get(0).getFIRST_NAME()+" "+super.userList.get(0).getNAME());
-        //activity.showToast(super.userList.get(0).getFIRST_NAME());
-        //activity.showToast(super.userList.get(1).getFIRST_NAME());
-        //activity.showToast(super.itemList.get(0).getITEM_NAME());
-        //activity.showToast(super.itemList.get(1).getITEM_NAME());
         if (successList.get(0)) {
             activity.showToast(R.string.success);
         } else {

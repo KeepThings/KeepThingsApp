@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         lentOutEntrys.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "17 Oct 18"));
         lentOutEntrys.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
 
-//        setItems(lentOutEntrys);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

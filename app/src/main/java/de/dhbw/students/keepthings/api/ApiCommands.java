@@ -9,23 +9,25 @@ public class ApiCommands {
 
     public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, NewLentOutEntryActivity activity) {
         String url = server + "addEntry.php?" + "ITEM_NAME=" + ITEM_NAME + "&ITEM_DESC=" + ITEM_DESC + "&USER_ID=" + USER_ID + "&BORROWER=" + BORROWER + "&DATE_FROM=" + DATE_FROM + "&DATE_TO=" + DATE_TO;
-        ApiAddLentOutItem api = new ApiAddLentOutItem(url, UrlCase.success, activity); //für das LendoutFragment
+        ApiAddLentOutItem api = new ApiAddLentOutItem(url, UrlCase.success, activity);
         api.execute(url);
     }
-
-/* Muss man wie bei addEntry anpassen was für eine unterklasse von ApiConnection erstellt wird.
-    public static void getUsers(String UID, String ALL, Activity activity) {
-        String url = server + "getUsers.php?" + "UID=" + UID + "&ALL=" + ALL;
-        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 0, activity);
-        api.execute(url);
-    } */
 
     public static void getUserItems(String UID, MainActivity activity) {
         String url = server + "getUserItems.php?" + "&UID=" + UID;
         ApiLentOutItemList api = new ApiLentOutItemList(url, UrlCase.Item, activity);
         api.execute(url);
     }
-/*
+
+
+/* Muss man wie bei addEntry anpassen was für eine unterklasse von ApiConnection erstellt wird.
+    public static void getUsers(String UID, String ALL, Activity activity) {
+        String url = server + "getUsers.php?" + "UID=" + UID + "&ALL=" + ALL;
+        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 0, activity);
+        api.execute(url);
+    }
+
+
     public static void getUserContactAssignments(String UID, Activity activity) {
         String url = server + "getUserContactAssignments.php?" + "UID=" + UID;
         ApiGetUsersConnection api = new ApiGetUsersConnection(url, 2, activity);

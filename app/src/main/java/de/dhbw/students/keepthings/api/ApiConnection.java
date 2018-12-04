@@ -1,7 +1,6 @@
 package de.dhbw.students.keepthings.api;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,18 +19,17 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
 
     protected UrlCase urlcase;
     protected URL url;
-    protected HttpURLConnection connection = null;
-    protected BufferedReader reader = null;
-    ArrayList<UserEntry> userList;
-    ArrayList<ItemEntry> itemList;
-    ArrayList<MessageEntry> messageList;
-    ArrayList<Boolean> successList;
+    protected HttpURLConnection connection;
+    protected BufferedReader reader;
+    protected ArrayList<UserEntry> userList;
+    protected ArrayList<ItemEntry> itemList;
+    protected ArrayList<MessageEntry> messageList;
+    protected ArrayList<Boolean> successList;
 
 
     @Override
     protected JSONArray doInBackground(String... strings) {
         try {
-
             connection = (HttpURLConnection) url.openConnection();
             connection.connect();
             InputStream stream = connection.getInputStream();
@@ -43,13 +41,12 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             }
 
             String finalJson = buffer.toString();
-            if (!finalJson.startsWith("{")){
-                finalJson="{"+finalJson+"}";
+            if (!finalJson.startsWith("{")) {
+                finalJson = "{" + finalJson + "}";
             }
-            Log.e("JSON",finalJson);
             if (finalJson.contains("[")) { // checks if the JSON contains an array of objects or just one
-                JSONObject parentObjekt = new JSONObject(finalJson);
-                JSONArray parentArray = parentObjekt.getJSONArray("result");
+                JSONObject parentObject = new JSONObject(finalJson);
+                JSONArray parentArray = parentObject.getJSONArray("result");
                 switch (urlcase) {
                     case User: //User means the JSON contains a list with User entrys
                         this.addUserArray(parentArray);
@@ -65,25 +62,24 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                         break;
                 }
             } else {
-                JSONObject parentObjekt = new JSONObject(finalJson);
-                JSONObject parentResultObjekt = parentObjekt.getJSONObject("result");
+                JSONObject parentObject = new JSONObject(finalJson);
+                JSONObject parentResultObject = parentObject.getJSONObject("result");
                 switch (urlcase) {
                     case User:
-                        this.addUserObj(parentResultObjekt);
+                        this.addUserObj(parentResultObject);
                         break;
                     case Item:
-                        this.addItemObj(parentResultObjekt);
+                        this.addItemObj(parentResultObject);
                         break;
                     case Message:
-                        this.addMessageObj(parentResultObjekt);
+                        this.addMessageObj(parentResultObject);
                         break;
                     case success:
-                        this.addSuccessObj(parentResultObjekt);
+                        this.addSuccessObj(parentResultObject);
                         break;
                 }
             }
 
-            return null;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -91,10 +87,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
         return null;
-
     }
 
     protected void addUserArray(JSONArray parentArray) {
@@ -118,6 +111,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             e.printStackTrace();
         }
     }
+
     protected void addItemArray(JSONArray parentArray) {
         try {
             itemList = new ArrayList<>();
@@ -137,6 +131,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             e.printStackTrace();
         }
     }
+
     protected void addMessageArray(JSONArray parentArray) {
         try {
             messageList = new ArrayList<>();
@@ -154,6 +149,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             e.printStackTrace();
         }
     }
+
     protected void addSuccessArray(JSONArray parentArray) {
         try {
             successList = new ArrayList<>();
@@ -166,69 +162,73 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
             e.printStackTrace();
         }
     }
-    protected void addUserObj(JSONObject parentResultObjekt) {
+
+    protected void addUserObj(JSONObject parentResultObject) {
         try {
             userList = new ArrayList<>();
-            for (int i = 0; i < parentResultObjekt.length(); i++) {
+            for (int i = 0; i < parentResultObject.length(); i++) {
                 userList.add(new UserEntry(
-                        parentResultObjekt.getString("USER_ID"),
-                        parentResultObjekt.getString("NAME"),
-                        parentResultObjekt.getString("FIRST_NAME"),
-                        parentResultObjekt.getString("PASSWORD"),
-                        parentResultObjekt.getString("EMAIL"),
-                        parentResultObjekt.getString("TEL_NR"),
-                        parentResultObjekt.getString("USERNAME"),
-                        parentResultObjekt.getString("TYPE"),
-                        parentResultObjekt.getInt("VERIFIED"),
-                        parentResultObjekt.getBoolean("success")
+                        parentResultObject.getString("USER_ID"),
+                        parentResultObject.getString("NAME"),
+                        parentResultObject.getString("FIRST_NAME"),
+                        parentResultObject.getString("PASSWORD"),
+                        parentResultObject.getString("EMAIL"),
+                        parentResultObject.getString("TEL_NR"),
+                        parentResultObject.getString("USERNAME"),
+                        parentResultObject.getString("TYPE"),
+                        parentResultObject.getInt("VERIFIED"),
+                        parentResultObject.getBoolean("success")
                 ));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-    protected void addItemObj(JSONObject parentResultObjekt) {
+
+    protected void addItemObj(JSONObject parentResultObject) {
         try {
             itemList = new ArrayList<>();
-            for (int i = 0; i < parentResultObjekt.length(); i++) {
+            for (int i = 0; i < parentResultObject.length(); i++) {
                 itemList.add(new ItemEntry(
-                        parentResultObjekt.getInt("ITEM_ID"),
-                        parentResultObjekt.getString("ITEM_NAME"),
-                        parentResultObjekt.getString("ITEM_DESC"),
-                        parentResultObjekt.getString("OWNER"),
-                        parentResultObjekt.getString("BORROWER"),
-                        parentResultObjekt.getString("DATE_FROM"),
-                        parentResultObjekt.getString("DATE_TO"),
-                        parentResultObjekt.getBoolean("success")
+                        parentResultObject.getInt("ITEM_ID"),
+                        parentResultObject.getString("ITEM_NAME"),
+                        parentResultObject.getString("ITEM_DESC"),
+                        parentResultObject.getString("OWNER"),
+                        parentResultObject.getString("BORROWER"),
+                        parentResultObject.getString("DATE_FROM"),
+                        parentResultObject.getString("DATE_TO"),
+                        parentResultObject.getBoolean("success")
                 ));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-    protected void addMessageObj(JSONObject parentResultObjekt) {
+
+    protected void addMessageObj(JSONObject parentResultObject) {
         try {
             messageList = new ArrayList<>();
-            for (int i = 0; i < parentResultObjekt.length(); i++) {
+            for (int i = 0; i < parentResultObject.length(); i++) {
                 messageList.add(new MessageEntry(
-                        parentResultObjekt.getInt("MESSAGE_ID"),
-                        parentResultObjekt.getString("MESSAGE"),
-                        parentResultObjekt.getInt("SENDER"),
-                        parentResultObjekt.getInt("RECEIVER_ID"),
-                        parentResultObjekt.getString("SENT_TIMESTAP"),
-                        parentResultObjekt.getBoolean("success")
+                        parentResultObject.getInt("MESSAGE_ID"),
+                        parentResultObject.getString("MESSAGE"),
+                        parentResultObject.getInt("SENDER"),
+                        parentResultObject.getInt("RECEIVER_ID"),
+                        parentResultObject.getString("SENT_TIMESTAP"),
+                        parentResultObject.getBoolean("success")
                 ));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-    protected void addSuccessObj(JSONObject parentResultObjekt) {
+
+    protected void addSuccessObj(JSONObject parentResultObject) {
         try {
             successList = new ArrayList<>();
-            for (int i = 0; i < parentResultObjekt.length(); i++) {
+            for (int i = 0; i < parentResultObject.length(); i++) {
                 successList.add(
-                        parentResultObjekt.getBoolean("success")
+                        parentResultObject.getBoolean("success")
                 );
             }
         } catch (JSONException e) {
