@@ -17,4 +17,5 @@
     <string name="github">GitHub</string>
     <string name="settings">Einstellungen</string>
     <string name="success">Die Daten wurden erfolgreich übermittelt!</string>
+    <string name="unsuccess">Es ist ein Fehler aufgetreten!</string>
 </resources>

@@ -1,19 +1,17 @@
 package de.dhbw.students.keepthings.api;
 
-import android.app.Activity;
-import android.util.Log;
-
 import org.json.JSONArray;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import de.dhbw.students.keepthings.main.LentOutFragment;
+import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
 
-public class ApiLentOutFragment extends ApiConnection {
+public class ApiAddLentOutItem extends ApiConnection {
     protected NewLentOutEntryActivity activity;
-    public ApiLentOutFragment(String purl, UrlCase urlcase, NewLentOutEntryActivity activity) {
+
+    public ApiAddLentOutItem(String purl, UrlCase urlcase, NewLentOutEntryActivity activity) {
         try {
             super.url = new URL(purl);
             super.urlcase = urlcase;
@@ -33,6 +31,11 @@ public class ApiLentOutFragment extends ApiConnection {
         //activity.showToast(super.userList.get(1).getFIRST_NAME());
         //activity.showToast(super.itemList.get(0).getITEM_NAME());
         //activity.showToast(super.itemList.get(1).getITEM_NAME());
+        if (successList.get(0)) {
+            activity.showToast(R.string.success);
+        } else {
+            activity.showToast(R.string.unsuccess);
+        }
     }
 }
 

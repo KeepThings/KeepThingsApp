@@ -1,7 +1,6 @@
 package de.dhbw.students.keepthings.api;
 
-import android.app.Activity;
-
+import de.dhbw.students.keepthings.MainActivity;
 import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
 
 public class ApiCommands {
@@ -10,7 +9,7 @@ public class ApiCommands {
 
     public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, NewLentOutEntryActivity activity) {
         String url = server + "addEntry.php?" + "ITEM_NAME=" + ITEM_NAME + "&ITEM_DESC=" + ITEM_DESC + "&USER_ID=" + USER_ID + "&BORROWER=" + BORROWER + "&DATE_FROM=" + DATE_FROM + "&DATE_TO=" + DATE_TO;
-        ApiLentOutFragment api = new ApiLentOutFragment(url, UrlCase.success, activity); //für das LendoutFragment
+        ApiAddLentOutItem api = new ApiAddLentOutItem(url, UrlCase.success, activity); //für das LendoutFragment
         api.execute(url);
     }
 
@@ -19,14 +18,14 @@ public class ApiCommands {
         String url = server + "getUsers.php?" + "UID=" + UID + "&ALL=" + ALL;
         ApiGetUsersConnection api = new ApiGetUsersConnection(url, 0, activity);
         api.execute(url);
-    }
+    } */
 
-    public static void getUserItems(String IID, String UID, Activity activity) {
-        String url = server + "getUserItems.php?" + "IID=" + IID + "&UID=" + UID;
-        ApiGetUsersConnection api = new ApiGetUsersConnection(url, 1, activity);
+    public static void getUserItems(String UID, MainActivity activity) {
+        String url = server + "getUserItems.php?" + "&UID=" + UID;
+        ApiLentOutItemList api = new ApiLentOutItemList(url, UrlCase.Item, activity);
         api.execute(url);
     }
-
+/*
     public static void getUserContactAssignments(String UID, Activity activity) {
         String url = server + "getUserContactAssignments.php?" + "UID=" + UID;
         ApiGetUsersConnection api = new ApiGetUsersConnection(url, 2, activity);

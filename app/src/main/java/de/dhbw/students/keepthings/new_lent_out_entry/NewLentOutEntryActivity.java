@@ -53,7 +53,10 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> {
+            onBackPressed();
+
+        });
 
         dateFromView = findViewById(R.id.date_from_add);
         calendar = Calendar.getInstance();
@@ -101,6 +104,7 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         }
 
         ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 1, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
+
         onBackPressed();
 
 
