@@ -7,7 +7,7 @@ import de.dhbw.students.keepthings.main.LentOutFragment;
 
 public class ApiCommands {
 
-    public static String server = "http://185.244.195.51/keepthings/api/";
+    public static String server = "http://185.244.195.51/keepthings/apiMobile/";
 
     public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, Activity activity) {
         String url = server + "addEntry.php?" + "ITEM_NAME=" + ITEM_NAME + "&ITEM_DESC=" + ITEM_DESC + "&USER_ID=" + USER_ID + "&BORROWER=" + BORROWER + "&DATE_FROM=" + DATE_FROM + "&DATE_TO=" + DATE_TO;
