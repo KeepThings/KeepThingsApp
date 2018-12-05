@@ -4,5 +4,6 @@ public enum UrlCase {
     User,
     Item,
     Message,
-    success
+    success,
+    Login
 }
