@@ -73,7 +73,6 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
                                 parentArray.getJSONObject(i).getBoolean("success")
                         ));
                     }
-                    //this.activity.setListe(listeUser);
                     break;
                 case 1 | 4:
                     ArrayList<ItemEntry> listeItem = new ArrayList<>();
@@ -89,7 +88,6 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
                                 parentArray.getJSONObject(i).getBoolean("success")
                         ));
                     }
-                    //this.activity.setListe(listeItem);
                     break;
                 case 3:
                     ArrayList<MessageEntry> listeMessage = new ArrayList<>();
@@ -103,7 +101,15 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
                                 parentArray.getJSONObject(i).getBoolean("success")
                         ));
                     }
-                    //this.activity.setListe(listeMessage);
+                    //
+                    break;
+                case 6:
+                    ArrayList<Boolean> listeSet = new ArrayList<>();
+                    for (int i = 0; i < parentArray.length(); i++) {
+                        listeSet.add(
+                                parentArray.getJSONObject(i).getBoolean("success")
+                        );
+                    }
                     break;
             }
 
@@ -129,11 +135,13 @@ public class ApiGetUsersConnection extends AsyncTask<String, Integer, JSONArray>
         // publishProgress(int...) in doInBackground(String...) aufgerufen wird
         /*Toast.makeText(activity, values[0] + " von " + values[1] + " geladen",
                 Toast.LENGTH_SHORT).show();
-*/
+
     }
 
     @Override
     protected void onPostExecute(JSONArray strings) {
+        this.activity.setListe(listeMessage);
+
 
         // Wir löschen den Inhalt des ArrayAdapters und fügen den neuen Inhalt ein
         // Der neue Inhalt ist der Rückgabewert von doInBackground(String...) also
