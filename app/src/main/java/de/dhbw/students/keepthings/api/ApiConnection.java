@@ -68,7 +68,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                                 parentArray.getJSONObject(i).getInt("ITEM_ID"),
                                 parentArray.getJSONObject(i).getString("ITEM_NAME"),
                                 parentArray.getJSONObject(i).getString("ITEM_DESC"),
-                                parentArray.getJSONObject(i).getString("USERNAME"),
+                                parentArray.getJSONObject(i).getInt("USERNAME"),
                                 parentArray.getJSONObject(i).getString("BORROWER"),
                                 parentArray.getJSONObject(i).getString("DATE_FROM"),
                                 parentArray.getJSONObject(i).getString("DATE_TO"),
@@ -82,7 +82,7 @@ public abstract class ApiConnection extends AsyncTask<String, Integer, JSONArray
                         listeMessage.add(new MessageEntry(
                                 parentArray.getJSONObject(i).getInt("MESSAGE_ID"),
                                 parentArray.getJSONObject(i).getString("MESSAGE"),
-                                parentArray.getJSONObject(i).getString("SENDER"),
+                                parentArray.getJSONObject(i).getInt("SENDER"),
                                 parentArray.getJSONObject(i).getInt("RECEIVER_ID"),
                                 parentArray.getJSONObject(i).getString("SENT_TIMESTAP"),
                                 parentArray.getJSONObject(i).getBoolean("success")

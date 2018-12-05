@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import de.dhbw.students.keepthings.R;
 
@@ -36,9 +37,10 @@ public class NewLentOutEntryFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_new_lent_out_entry, container, false);
 
-
         return rootView;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
