@@ -53,7 +53,10 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> {
+            onBackPressed();
+
+        });
 
         dateFromView = findViewById(R.id.date_from_add);
         calendar = Calendar.getInstance();
@@ -101,6 +104,7 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         }
 
         ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 1, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
+
         onBackPressed();
 
 
@@ -194,12 +198,12 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
                 .append(month).append("-").append(year));
     }
 
-    private void showToast(int message) {
+    public void showToast(int message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
 
-    private void showToast(String message) {
+    public void showToast(String message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }

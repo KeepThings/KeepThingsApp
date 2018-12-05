@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.api.ApiCommands;
 import de.dhbw.students.keepthings.main.LentOutEntry;
 import de.dhbw.students.keepthings.main.LentOutFragment;
 import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static ArrayList<String> itemDateFrom;
     static ArrayList<LentOutEntry> lentOutEntrys;
     private DrawerLayout drawer;
+    private boolean isListInit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,20 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         lentOutEntrys.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "17 Oct 18"));
         lentOutEntrys.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
 
-        itemTitle = new ArrayList<>();
-        itemPerson = new ArrayList<>();
-        itemDateTo = new ArrayList<>();
-        itemDateFrom = new ArrayList<>();
-
-        for (LentOutEntry entry : lentOutEntrys) {
-            itemTitle.add(entry.getTitle());
-            itemPerson.add(entry.getPerson());
-            itemDateTo.add(entry.getDateTo());
-            itemDateFrom.add(entry.getDateFrom());
-
-        }
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -82,12 +70,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        ApiCommands.getUserItems("1", this);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-                new LentOutFragment()).commit();
+
         navigationView.setCheckedItem(R.id.nav_lend_out_list);
 
 
+    }
+
+    public void setFragment() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
+                new LentOutFragment()).commit();
+        isListInit = true;
+    }
+
+    public void setItems(ArrayList<LentOutEntry> lentOutEntrys) {
+        itemTitle = new ArrayList<>();
+        itemPerson = new ArrayList<>();
+        itemDateTo = new ArrayList<>();
+        itemDateFrom = new ArrayList<>();
+
+        for (LentOutEntry entry : lentOutEntrys) {
+            itemTitle.add(entry.getTitle());
+            itemPerson.add(entry.getPerson());
+            itemDateTo.add(entry.getDateTo());
+            itemDateFrom.add(entry.getDateFrom());
+
+        }
+    }
+
+    public boolean isListInit() {
+        return isListInit;
     }
 
 

@@ -4,13 +4,13 @@ public class ItemEntry {
     private int ITEM_ID;
     private String ITEM_NAME;
     private String ITEM_DESC;
-    private int OWNER;
+    private String OWNER;
     private String BORROWER;
     private String DATE_FROM;
     private String DATE_TO;
     private boolean success;
 
-    public ItemEntry(int ITEM_ID, String ITEM_NAME, String ITEM_DESC, int OWNER, String BORROWER, String DATE_FROM, String DATE_TO, boolean success) {
+    public ItemEntry(int ITEM_ID, String ITEM_NAME, String ITEM_DESC, String OWNER, String BORROWER, String DATE_FROM, String DATE_TO, boolean success) {
 
         this.ITEM_ID = ITEM_ID;
         this.ITEM_NAME = ITEM_NAME;
@@ -46,11 +46,11 @@ public class ItemEntry {
         this.ITEM_DESC = ITEM_DESC;
     }
 
-    public int getOWNER() {
+    public String getOWNER() {
         return OWNER;
     }
 
-    public void setOWNER(int OWNER) {
+    public void setOWNER(String OWNER) {
         this.OWNER = OWNER;
     }
 
