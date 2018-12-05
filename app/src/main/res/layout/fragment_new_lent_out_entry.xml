@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/title_edit"
+            android:id="@+id/title_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -32,7 +32,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/desc_edit"
+            android:id="@+id/desc_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorMainText"
@@ -49,7 +49,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/person_edit"
+            android:id="@+id/person_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorMainText"
@@ -66,7 +66,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/date_from_edit"
+            android:id="@+id/date_from_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -83,7 +83,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/date_to_edit"
+            android:id="@+id/date_to_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -103,8 +103,10 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_add_entry"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:onClick="submit"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/colorButton"
         android:fontFamily="@font/raleway_light_italic"

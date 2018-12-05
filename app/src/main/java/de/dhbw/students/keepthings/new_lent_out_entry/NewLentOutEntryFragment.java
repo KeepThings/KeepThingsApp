@@ -36,9 +36,9 @@ public class NewLentOutEntryFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_new_lent_out_entry, container, false);
 
-
         return rootView;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

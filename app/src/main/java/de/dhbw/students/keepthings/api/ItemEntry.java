@@ -10,6 +10,18 @@ public class ItemEntry {
     private String DATE_TO;
     private boolean success;
 
+    public ItemEntry(int ITEM_ID, String ITEM_NAME, String ITEM_DESC, String OWNER, String BORROWER, String DATE_FROM, String DATE_TO, boolean success) {
+
+        this.ITEM_ID = ITEM_ID;
+        this.ITEM_NAME = ITEM_NAME;
+        this.ITEM_DESC = ITEM_DESC;
+        this.OWNER = OWNER;
+        this.BORROWER = BORROWER;
+        this.DATE_FROM = DATE_FROM;
+        this.DATE_TO = DATE_TO;
+        this.success = success;
+    }
+
     public int getITEM_ID() {
         return ITEM_ID;
     }
@@ -71,18 +83,6 @@ public class ItemEntry {
     }
 
     public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public ItemEntry(int ITEM_ID, String ITEM_NAME, String ITEM_DESC, String OWNER, String BORROWER, String DATE_FROM, String DATE_TO, boolean success) {
-
-        this.ITEM_ID = ITEM_ID;
-        this.ITEM_NAME = ITEM_NAME;
-        this.ITEM_DESC = ITEM_DESC;
-        this.OWNER = OWNER;
-        this.BORROWER = BORROWER;
-        this.DATE_FROM = DATE_FROM;
-        this.DATE_TO = DATE_TO;
         this.success = success;
     }
 }

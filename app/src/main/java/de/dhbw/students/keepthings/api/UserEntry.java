@@ -10,11 +10,12 @@ public class UserEntry {
     private String TEL_NR;
     private String USERNAME;
     private String TYPE;
-    private boolean VERIFIED;
+    private int VERIFIED;
     private boolean success;
 
 
-    public UserEntry(String USER_ID, String NAME, String FIRST_NAME, String PASSWORD, String e_MAIL, String TEL_NR, String USERNAME, String TYPE, boolean VERIFIED, boolean success) {
+
+    public UserEntry(String USER_ID, String NAME, String FIRST_NAME, String PASSWORD, String e_MAIL, String TEL_NR, String USERNAME, String TYPE, int VERIFIED, boolean success) {
         this.USER_ID = USER_ID;
         this.NAME = NAME;
         this.FIRST_NAME = FIRST_NAME;
@@ -91,11 +92,15 @@ public class UserEntry {
         this.TYPE = TYPE;
     }
 
-    public boolean isVERIFIED() {
+    public int isVERIFIED() {
         return VERIFIED;
     }
 
-    public void setVERIFIED(boolean VERIFIED) {
+    public void setVERIFIED(int VERIFIED) {
         this.VERIFIED = VERIFIED;
     }
+
+    public boolean isSuccess() {return success;}
+
+    public void setSuccess(boolean success) {this.success = success;}
 }

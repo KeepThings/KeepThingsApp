@@ -16,4 +16,15 @@
     <string name="blog">Blog</string>
     <string name="github">GitHub</string>
     <string name="settings">Einstellungen</string>
+    <string name="success">Die Daten wurden erfolgreich übermittelt!</string>
+    <string name="unsuccess">Es ist ein Fehler aufgetreten!</string>
+    <string name="prompt_email">E-Mail</string>
+    <string name="prompt_password">Passwort (optional)</string>
+    <string name="action_sign_in">Einloggen oder registrieren</string>
+    <string name="action_sign_in_short">Einloggen</string>
+    <string name="error_invalid_email">Die E-Mail-Adresse ist ungültig</string>
+    <string name="error_incorrect_password">Das Passwort ist inkorrekt</string>
+    <string name="error_field_required">Dieses Feld wird benötigt</string>
+    <string name="permission_rationale">Für die Bereitstellung von E-Mails sind Kontaktberechtigungen erforderlich</string>
+    <string name="error_to_short_password">Das Passwort ist zu kurz</string>
 </resources>
