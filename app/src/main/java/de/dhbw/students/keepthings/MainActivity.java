@@ -22,6 +22,7 @@ import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
 import de.dhbw.students.keepthings.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
     public static TextView textView;
     static ArrayList<String> itemTitle;
     static ArrayList<String> itemPerson;
