@@ -14,56 +14,51 @@
         android:layout_margin="16dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/title_add"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/colorMainText"
-            android:maxLength="50"
-            android:singleLine="true" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway_light_italic"
-            android:text="@string/stringTitle"
-            android:textColor="@color/colorDescriptionText"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/title_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/colorMainText"
+                android:hint="@string/stringTitle"
+                android:maxLength="50"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/desc_add"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorMainText"
-            android:gravity="start"
-            android:inputType="textMultiLine"
-            android:maxHeight="200dp" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway_light_italic"
-            android:text="@string/stringDesc"
-            android:textColor="@color/colorDescriptionText"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/desc_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorMainText"
+                android:gravity="start"
+                android:hint="@string/stringDesc"
+                android:inputType="textMultiLine"
+                android:maxHeight="200dp" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/person_add"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorMainText"
-            android:inputType="textAutoComplete"
-            android:maxLength="50"
-            android:singleLine="true" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway_light_italic"
-            android:text="@string/stringPerson"
-            android:textColor="@color/colorDescriptionText"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/person_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorMainText"
+                android:hint="@string/stringPerson"
+                android:inputType="textAutoComplete"
+                android:maxLength="50"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
 
         <TextView
             android:id="@+id/date_from_add"
@@ -106,10 +101,10 @@
         android:id="@+id/button_add_entry"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:onClick="submit"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/colorButton"
         android:fontFamily="@font/raleway_light_italic"
+        android:onClick="submit"
         android:text="@string/stringSave"
         android:textSize="15sp"
         android:textStyle="bold" />
