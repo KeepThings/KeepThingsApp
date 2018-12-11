@@ -17,7 +17,6 @@ public class AddEntryTest extends GreenCoffeeTest
 {
     @Rule
     public ActivityTestRule<NewLentOutEntryActivity> activity = new ActivityTestRule<>(NewLentOutEntryActivity.class);
-
     public AddEntryTest(ScenarioConfig scenarioConfig)
     {
         super(scenarioConfig);
@@ -26,6 +25,7 @@ public class AddEntryTest extends GreenCoffeeTest
     @Parameterized.Parameters(name = "{0}")
     public static Iterable<ScenarioConfig> scenarios() throws IOException
     {
+
         return new GreenCoffeeConfig()
                 .withFeatureFromAssets("assets/addEntry.feature")
                 .scenarios(

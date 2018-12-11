@@ -1,16 +1,20 @@
 package de.dhbw.students.keepthings.new_lent_out_entry;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.Calendar;
 
 import de.dhbw.students.keepthings.R;
@@ -55,24 +59,22 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(v -> {
             onBackPressed();
-
         });
 
         dateFromView = findViewById(R.id.date_from_add);
         calendar = Calendar.getInstance();
         fromYear = calendar.get(Calendar.YEAR);
-        fromMonth = calendar.get(Calendar.MONTH);
+        fromMonth = calendar.get(Calendar.MONTH)+1;
         fromDay = calendar.get(Calendar.DAY_OF_MONTH);
 
         dateToView = findViewById(R.id.date_to_add);
         calendar = Calendar.getInstance();
         toYear = calendar.get(Calendar.YEAR);
-        toMonth = calendar.get(Calendar.MONTH);
+        toMonth = calendar.get(Calendar.MONTH)+1;
         toDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-
-        showFromDate(fromYear, fromMonth + 1, fromDay);
-        showToDate(toYear, toMonth + 1, toDay);
+        showFromDate(fromYear, fromMonth , fromDay);
+        showToDate(toYear, toMonth , toDay);
     }
 
     @SuppressWarnings("deprecation")
@@ -93,21 +95,37 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         TextView dateFrom = findViewById(R.id.date_from_add);
         TextView dateTo = findViewById(R.id.date_to_add);
 
+        String[] tempdate = dateFrom.getText().toString().split("-");
+        fromDay = Integer.parseInt(String.valueOf(tempdate[0]));
+        fromMonth = Integer.parseInt(String.valueOf(tempdate[1]));
+        fromYear = Integer.parseInt(String.valueOf(tempdate[2]));
+        tempdate = dateTo.getText().toString().split("-");
+        toDay = Integer.parseInt(String.valueOf(tempdate[0]));
+        toMonth = Integer.parseInt(String.valueOf(tempdate[1]));
+        toYear = Integer.parseInt(String.valueOf(tempdate[2]));
+
         if (title.getText().toString().equals("")) {
-            showToast("Title can't be empty");
+            title.setError("Title can't be empty");
+            title.requestFocus();
             return;
         }
-
         if (person.getText().toString().equals("")) {
-            showToast("Person can't be empty");
+            person.setError("Person can't be empty");
+            person.requestFocus();
             return;
         }
-
-        ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 1, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
-
+        if (!showFromDate(fromYear, fromMonth, fromDay)){
+            dateFromView.setError(getString(R.string.dateFromErrorMessage));
+            dateFromView.requestFocus();
+            return;
+        }
+        if (!showToDate(toYear, toMonth, toDay)){
+            dateToView.setError(getString(R.string.dateToErrorMessage));
+            dateToView.requestFocus();
+            return;
+        }
+        ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 2, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
         onBackPressed();
-
-
     }
 
     public String parseDate(String date) {
@@ -121,8 +139,6 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         dateReverse.append(dateSplit[1]);
         dateReverse.append("-");
         dateReverse.append(dateSplit[0]);
-
-
         return dateReverse.toString();
     }
 
@@ -140,71 +156,68 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
         return null;
     }
 
-    private void showFromDate(int year, int month, int day) {
-        if (toYear == year && toMonth + 1 == month && toDay == day) {
+    private boolean showFromDate(int year, int month, int day) {
+        boolean result = true;
+        dateFromView.setError(null);
+        if (toYear == year && toMonth == month && toDay == day) {
             dateFromView.setText(new StringBuilder().append(day).append("-")
                     .append(month).append("-").append(year));
-            return;
+            return true;
         }
         if (toYear < year) {
-            year = toYear;
-            month = toMonth + 1;
-            day = toDay;
-            showToast(R.string.dateFromErrorMessage);
-        }
-        if (toYear <= year && toMonth + 1 < month) {
-            year = toYear;
-            month = toMonth + 1;
-            day = toDay;
-            showToast(R.string.dateFromErrorMessage);
-        }
-        if (toMonth + 1 <= month && toDay <= day) {
-            month = toMonth + 1;
-            day = toDay;
-            showToast(R.string.dateFromErrorMessage);
-        }
+            result = false;
 
-
+        }
+        if (toYear <= year && toMonth< month) {
+            result = false;
+        }
+        if (toYear <= year && toMonth<= month && toDay < day) {
+            result = false;
+        }
         dateFromView.setText(new StringBuilder().append(day).append("-")
                 .append(month).append("-").append(year));
+        hideKeyboard(this);
+        return result;
     }
 
-    private void showToDate(int year, int month, int day) {
-        if (fromYear == year && fromMonth + 1 == month && fromDay == day) {
+    private boolean showToDate(int year, int month, int day) {
+        boolean result = true;
+        dateToView.setError(null);
+        if (fromYear == year && fromMonth == month && fromDay == day) {
             dateToView.setText(new StringBuilder().append(day).append("-")
                     .append(month).append("-").append(year));
-            return;
+            return true;
         }
         if (fromYear > year) {
-            year = fromYear;
-            month = fromMonth + 1;
-            day = fromDay;
-            showToast(R.string.dateToErrorMessage);
-        }
-        if (fromYear >= year && fromMonth + 1 > month) {
-            year = fromYear;
-            month = fromMonth + 1;
-            day = fromDay;
-            showToast(R.string.dateToErrorMessage);
-        }
-        if (fromMonth + 1 >= month && fromDay >= day) {
-            month = fromMonth + 1;
-            day = fromDay;
-            showToast(R.string.dateToErrorMessage);
-        }
+            result = false;
 
+        }
+        if (fromYear >= year && fromMonth> month) {
+            result = false;
 
+        }
+        if (fromYear >= year && fromMonth>= month && fromDay > day) {
+            result = false;
+
+        }
         dateToView.setText(new StringBuilder().append(day).append("-")
                 .append(month).append("-").append(year));
+        hideKeyboard(this);
+        return result;
     }
 
     public void showToast(int message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
     }
-
-    public void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT).show();
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

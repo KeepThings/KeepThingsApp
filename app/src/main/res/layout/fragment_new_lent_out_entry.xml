@@ -65,7 +65,7 @@
             android:textColor="@color/colorDescriptionText"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/date_from_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
             android:textColor="@color/colorDescriptionText"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/date_to_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
