@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static ArrayList<String> itemPerson;
     static ArrayList<String> itemDateTo;
     static ArrayList<String> itemDateFrom;
-    static ArrayList<LentOutEntry> lentOutEntrys;
+    private LentOutFragment lentOutFragment;
     private DrawerLayout drawer;
     private boolean isListInit;
 
@@ -39,23 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        lentOutEntrys = new ArrayList<>();
-
-        lentOutEntrys.add(new LentOutEntry("title", "person", "dateTo", "dateFrom"));
-        lentOutEntrys.add(new LentOutEntry("Pfanne", "Max Mustermann", "30 Oct 18", "27 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("30 Euro", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Fahrradpumpe", "Max Mustermann", "30 Oct 18", "26 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Fußball", "Max Mustermann", "30 Oct 18", "20 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Taschenlampe", "Max Mustermann", "30 Oct 18", "6 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Zelt", "Max Mustermann", "30 Oct 18", "22 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Kopfhörer", "Max Mustermann", "30 Oct 18", "18 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Kettensäge", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Schraubenzieher", "Max Mustermann", "30 Oct 18", "15 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Biertischgarnitur", "Max Mustermann", "30 Oct 18", "12 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Anhänger", "Max Mustermann", "30 Oct 18", "5 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Wanderstiefel", "Max Mustermann", "30 Oct 18", "17 Oct 18"));
-        lentOutEntrys.add(new LentOutEntry("Lautsprecher", "Max Mustermann", "30 Oct 18", "9 Oct 18"));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         ApiCommands.getUserItems("1", this);
 
+        lentOutFragment = new LentOutFragment();
 
         navigationView.setCheckedItem(R.id.nav_lend_out_list);
 
@@ -80,23 +64,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setFragment() {
         getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
-                new LentOutFragment()).commit();
+                lentOutFragment).commit();
         isListInit = true;
     }
 
-    public void setItems(ArrayList<LentOutEntry> lentOutEntrys) {
+    public void setItems(ArrayList<LentOutEntry> lentOutEntries) {
         itemTitle = new ArrayList<>();
         itemPerson = new ArrayList<>();
         itemDateTo = new ArrayList<>();
         itemDateFrom = new ArrayList<>();
 
-        for (LentOutEntry entry : lentOutEntrys) {
+        for (LentOutEntry entry : lentOutEntries) {
             itemTitle.add(entry.getTitle());
             itemPerson.add(entry.getPerson());
             itemDateTo.add(entry.getDateTo());
             itemDateFrom.add(entry.getDateFrom());
-
         }
+        lentOutFragment = new LentOutFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
+                lentOutFragment).commit();
     }
 
     public boolean isListInit() {
