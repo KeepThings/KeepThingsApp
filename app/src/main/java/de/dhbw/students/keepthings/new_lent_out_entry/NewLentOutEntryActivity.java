@@ -103,7 +103,7 @@ public class NewLentOutEntryActivity extends AppCompatActivity {
             return;
         }
 
-        ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 1, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
+        ApiCommands.addEntry(title.getText().toString(), desc.getText().toString(), 2, person.getText().toString(), parseDate(dateFrom.getText().toString()), parseDate(dateTo.getText().toString()), this);
 
         onBackPressed();
 
