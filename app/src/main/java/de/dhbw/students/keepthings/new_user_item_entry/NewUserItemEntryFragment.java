@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.new_lent_out_entry;
+package de.dhbw.students.keepthings.new_user_item_entry;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 
 import de.dhbw.students.keepthings.R;
 
-public class NewLentOutEntryFragment extends Fragment {
+public class NewUserItemEntryFragment extends Fragment {
 
 
-    public NewLentOutEntryFragment() {
+    public NewUserItemEntryFragment() {
     }
 
     @Override
@@ -34,7 +34,7 @@ public class NewLentOutEntryFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        View rootView = inflater.inflate(R.layout.fragment_new_lent_out_entry, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_new_user_item_entry, container, false);
 
         return rootView;
     }

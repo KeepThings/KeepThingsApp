@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".new_lent_out_entry.NewLentOutEntryActivity" />
+        <activity android:name=".new_user_item_entry.NewUserItemEntryActivity" />
         <activity android:name=".settings.SettingsActivity"></activity>
         <activity android:name=".MainActivity" android:label="@string/app_name"></activity>
     </application>

@@ -27,15 +27,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raleway_light_italic"
-                android:text="@string/stringNewLentOutEntry"
+                android:text="@string/stringNewUserItemEntry"
                 android:textColor="@color/colorToolbarText"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
 
         <fragment
-            android:id="@+id/lendoutfragment_container_new_entry"
-            android:name="de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryFragment"
+            android:id="@+id/user_item_fragment_container_new_entry"
+            android:name="de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

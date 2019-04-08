@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import de.dhbw.students.keepthings.R;
 
 
-public class LentOutEntryListAdapter extends ArrayAdapter<LentOutEntry> implements View.OnClickListener {
+public class UserItemEntryListAdapter extends ArrayAdapter<UserItemEntry> implements View.OnClickListener {
 
 
-    public LentOutEntryListAdapter(ArrayList<LentOutEntry> data, Context context) {
-        super(context, R.layout.lent_out_entry, data);
+    public UserItemEntryListAdapter(ArrayList<UserItemEntry> data, Context context) {
+        super(context, R.layout.user_item_entry, data);
 
     }
 
@@ -29,7 +29,7 @@ public class LentOutEntryListAdapter extends ArrayAdapter<LentOutEntry> implemen
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        LentOutEntry dataModel = getItem(position);
+        UserItemEntry dataModel = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
 
@@ -37,7 +37,7 @@ public class LentOutEntryListAdapter extends ArrayAdapter<LentOutEntry> implemen
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.lent_out_entry, parent, false);
+            convertView = inflater.inflate(R.layout.user_item_entry, parent, false);
             viewHolder.txtTitle = convertView.findViewById(R.id.item_title);
             viewHolder.txtPerson = convertView.findViewById(R.id.item_person);
             viewHolder.txtDateTo = convertView.findViewById(R.id.item_dateto);
