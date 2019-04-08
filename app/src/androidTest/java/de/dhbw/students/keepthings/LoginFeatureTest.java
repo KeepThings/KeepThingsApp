@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import java.io.IOException;
-import de.dhbw.students.keepthings.Login.LoginActivity;
+import de.dhbw.students.keepthings.login.LoginActivity;
 
 @RunWith(Parameterized.class)
 public class LoginFeatureTest extends GreenCoffeeTest

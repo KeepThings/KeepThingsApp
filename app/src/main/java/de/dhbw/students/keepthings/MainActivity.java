@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ApiCommands.getUserItems("1", this);
 
 
-        navigationView.setCheckedItem(R.id.nav_lend_out_list);
+        navigationView.setCheckedItem(R.id.nav_user_item_list);
 
 
     }
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.nav_lend_out_list:
+            case R.id.nav_user_item_list:
                 getSupportFragmentManager().beginTransaction().replace(R.id.user_item_fragment_container,
                         new UserItemsFragment()).commit();
                 break;
