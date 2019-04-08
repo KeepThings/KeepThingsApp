@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import de.dhbw.students.keepthings.MainActivity;
-import de.dhbw.students.keepthings.main.LentOutEntry;
+import de.dhbw.students.keepthings.main.UserItemEntry;
 
 public class ApiLentOutItemList extends ApiConnection {
     protected MainActivity activity;
@@ -24,14 +24,14 @@ public class ApiLentOutItemList extends ApiConnection {
 
     @Override
     protected void onPostExecute(JSONArray strings) {
-        ArrayList<LentOutEntry> lentOutEntries = new ArrayList<>();
+        ArrayList<UserItemEntry> lentOutEntries = new ArrayList<>();
 
         for (int i = 0; i < itemList.size(); i++) {
             String title = itemList.get(i).getITEM_NAME();
             String person = itemList.get(i).getBORROWER();
             String dateTo = itemList.get(i).getDATE_TO();
             String dateFrom = itemList.get(i).getDATE_FROM();
-            lentOutEntries.add(new LentOutEntry(title, person, dateTo, dateFrom));
+            lentOutEntries.add(new UserItemEntry(title, person, dateTo, dateFrom));
         }
 
         activity.setItems(lentOutEntries);

@@ -6,12 +6,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
+import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
 
 public class ApiAddLentOutItem extends ApiConnection {
-    protected NewLentOutEntryActivity activity;
+    protected NewUserItemEntryActivity activity;
 
-    public ApiAddLentOutItem(String purl, UrlCase urlcase, NewLentOutEntryActivity activity) {
+    public ApiAddLentOutItem(String purl, UrlCase urlcase, NewUserItemEntryActivity activity) {
         try {
             super.url = new URL(purl);
             super.urlcase = urlcase;

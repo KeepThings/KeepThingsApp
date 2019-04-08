@@ -13,7 +13,7 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
     @Override
     public ViewHolderClass onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.lent_out_entry, null);
+        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.user_item_entry, null);
 
         return new ViewHolderClass(itemView);
     }

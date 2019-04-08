@@ -6,13 +6,13 @@
     <string name="stringPerson">Person</string>
     <string name="stringDateFrom">From</string>
     <string name="stringDateTo">To</string>
-    <string name="stringNewLentOutEntry">New Entry</string>
+    <string name="stringNewUserItemEntry">New Entry</string>
     <string name="stringSave">Save</string>
     <string name="dateFromErrorMessage">Please select a date before the end date.</string>
     <string name="dateToErrorMessage">Please select a date after the start date.</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="my_entry_list">My List</string>
+    <string name="my_item_list">My List</string>
     <string name="marketplace">Marketplace</string>
     <string name="about">About</string>
     <string name="wordpress_link" translatable="false">keepthingsnlb.wordpress.com</string>

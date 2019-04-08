@@ -1,13 +1,13 @@
 package de.dhbw.students.keepthings.main;
 
-public class LentOutEntry {
+public class UserItemEntry {
 
     private String title;
     private String person;
     private String dateTo;
     private String dateFrom;
 
-    public LentOutEntry(String title, String person, String dateTo, String dateFrom) {
+    public UserItemEntry(String title, String person, String dateTo, String dateFrom) {
         this.title = title;
         this.person = person;
         this.dateTo = dateTo;

@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.new_lent_out_entry;
+package de.dhbw.students.keepthings.new_user_item_entry;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -16,7 +16,7 @@ import java.util.Calendar;
 import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.api.ApiCommands;
 
-public class NewLentOutEntryActivity extends AppCompatActivity {
+public class NewUserItemEntryActivity extends AppCompatActivity {
 
     private Calendar calendar;
     private TextView dateFromView, dateToView;

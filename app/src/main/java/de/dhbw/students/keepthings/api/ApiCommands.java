@@ -2,15 +2,14 @@ package de.dhbw.students.keepthings.api;
 
 import de.dhbw.students.keepthings.Login.LoginActivity;
 import de.dhbw.students.keepthings.MainActivity;
-import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
-import android.app.Activity;
+import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
 
 
 public class ApiCommands {
 
     public static String server = "http://185.244.195.51/keepthings/apiMobile/";
 
-    public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, NewLentOutEntryActivity activity) {
+    public static void addEntry(String ITEM_NAME, String ITEM_DESC, int USER_ID, String BORROWER, String DATE_FROM, String DATE_TO, NewUserItemEntryActivity activity) {
         String url = server + "addEntry.php?" + "ITEM_NAME=" + ITEM_NAME + "&ITEM_DESC=" + ITEM_DESC + "&USER_ID=" + USER_ID + "&BORROWER=" + BORROWER + "&DATE_FROM=" + DATE_FROM + "&DATE_TO=" + DATE_TO;
         ApiAddLentOutItem api = new ApiAddLentOutItem(url, UrlCase.success, activity);
         api.execute(url);

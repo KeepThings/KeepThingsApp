@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 import de.dhbw.students.keepthings.MainActivity;
 import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.RvAdapterKlasse;
-import de.dhbw.students.keepthings.new_lent_out_entry.NewLentOutEntryActivity;
+import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
 
-public class LentOutFragment extends Fragment {
+public class UserItemsFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
@@ -30,7 +30,7 @@ public class LentOutFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        rootView = inflater.inflate(R.layout.fragment_lend_out, container, false);
+        rootView = inflater.inflate(R.layout.fragment_user_items, container, false);
 
         recyclerView = rootView.findViewById(R.id.recycler_view_test);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -42,7 +42,7 @@ public class LentOutFragment extends Fragment {
         MainActivity.textView = rootView.findViewById(R.id.item_text_view);
 
         fab = rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(view -> startActivity(new Intent(rootView.getContext(), NewLentOutEntryActivity.class)));
+        fab.setOnClickListener(view -> startActivity(new Intent(rootView.getContext(), NewUserItemEntryActivity.class)));
 
         return rootView;
     }

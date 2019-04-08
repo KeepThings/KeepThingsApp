@@ -6,11 +6,11 @@
     <string name="stringPerson">Person</string>
     <string name="stringDesc">Beschreibung</string>
     <string name="stringTitle">Titel</string>
-    <string name="stringNewLentOutEntry">Neuer Eintrag</string>
+    <string name="stringNewUserItemEntry">Neuer Eintrag</string>
     <string name="stringSave">Speichern</string>
     <string name="dateFromErrorMessage">Bitte wähle ein Datum vor dem Enddatum.</string>
     <string name="dateToErrorMessage">Bitte wähle ein Datum nach dem Startdatum.</string>
-    <string name="my_entry_list">Meine Einträge</string>
+    <string name="my_item_list">Meine Einträge</string>
     <string name="marketplace">Marktplatz</string>
     <string name="about">Über</string>
     <string name="blog">Blog</string>
