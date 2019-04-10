@@ -10,8 +10,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.main.UserItemEntry;
-import de.dhbw.students.keepthings.main.UserItemEntryListAdapter;
+import de.dhbw.students.keepthings.user_item.UserItemEntry;
+import de.dhbw.students.keepthings.user_item.UserItemEntryListAdapter;
 
 public class MarketplaceFragment extends Fragment {
 

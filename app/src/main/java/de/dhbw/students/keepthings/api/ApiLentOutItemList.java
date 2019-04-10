@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import de.dhbw.students.keepthings.MainActivity;
-import de.dhbw.students.keepthings.main.UserItemEntry;
+import de.dhbw.students.keepthings.user_item.UserItemEntry;
 
 public class ApiLentOutItemList extends ApiConnection {
     protected MainActivity activity;

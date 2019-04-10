@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings.user_item;
 
 public class UserItemEntry {
 

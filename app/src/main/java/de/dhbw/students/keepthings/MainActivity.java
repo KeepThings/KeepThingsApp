@@ -17,8 +17,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import de.dhbw.students.keepthings.api.ApiCommands;
-import de.dhbw.students.keepthings.main.UserItemEntry;
-import de.dhbw.students.keepthings.main.UserItemsFragment;
+import de.dhbw.students.keepthings.user_item.UserItemEntry;
+import de.dhbw.students.keepthings.user_item.UserItemsFragment;
 import de.dhbw.students.keepthings.marketplace.MarketplaceFragment;
 import de.dhbw.students.keepthings.settings.SettingsActivity;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

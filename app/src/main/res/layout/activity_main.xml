@@ -33,7 +33,7 @@
 
         <fragment
             android:id="@+id/user_item_fragment_container"
-            android:name="de.dhbw.students.keepthings.main.MainFragment"
+            android:name="de.dhbw.students.keepthings.user_item.MainFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

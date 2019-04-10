@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.main;
+package de.dhbw.students.keepthings.user_item;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
