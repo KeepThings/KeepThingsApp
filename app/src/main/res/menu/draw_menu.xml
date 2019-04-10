@@ -10,10 +10,7 @@
             android:id="@+id/nav_user_item_list"
             android:icon="@drawable/ic_user_item"
             android:title="@string/my_item_list" />
-        <item
-            android:id="@+id/nav_marketplace"
-            android:icon="@drawable/ic_marketplace"
-            android:title="@string/marketplace" />
+
     </group>
 
     <group
