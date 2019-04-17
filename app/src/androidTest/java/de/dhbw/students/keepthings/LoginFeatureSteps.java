@@ -12,7 +12,7 @@ public class LoginFeatureSteps extends GreenCoffeeSteps
     private static final String INVALID_PASSWORD = "5678";
     private static final String VALID_EMAIL = "guest@gamil.com";
     private static final String VALID_PASSWORD = "5678afsssaf";
-    private static final String CORRECT_EMAIL = "Test@Test.Test";
+    private static final String CORRECT_EMAIL = "Test@Test.de";
     private static final String CORRECT_PASSWORD = "123456789";
 
     @Given("^I see an empty login form$")

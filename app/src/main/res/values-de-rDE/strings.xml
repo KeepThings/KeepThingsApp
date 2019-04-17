@@ -19,8 +19,8 @@
     <string name="success">Die Daten wurden erfolgreich übermittelt!</string>
     <string name="unsuccess">Es ist ein Fehler aufgetreten!</string>
     <string name="prompt_email">E-Mail</string>
-    <string name="prompt_password">Passwort (optional)</string>
-    <string name="action_sign_in">Einloggen oder registrieren</string>
+    <string name="prompt_password">Passwort</string>
+    <string name="action_sign_in">Einloggen</string>
     <string name="action_sign_in_short">Einloggen</string>
     <string name="error_invalid_email">Die E-Mail-Adresse ist ungültig</string>
     <string name="error_incorrect_password">Das Passwort ist inkorrekt</string>

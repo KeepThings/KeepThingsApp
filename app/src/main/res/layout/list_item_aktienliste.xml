@@ -6,6 +6,6 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:paddingLeft="@dimen/activity_left_margin">
+    android:paddingLeft="@dimen/margin">
 
 </TextView>
