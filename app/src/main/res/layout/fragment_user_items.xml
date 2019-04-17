@@ -11,12 +11,12 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_test"
+        android:id="@+id/recycler_view_user_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/item_text_view"
+        android:id="@+id/user_items_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -26,7 +26,7 @@
         android:layout_height="match_parent">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fab_user_items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

@@ -32,16 +32,16 @@ public class UserItemsFragment extends Fragment {
 
         rootView = inflater.inflate(R.layout.fragment_user_items, container, false);
 
-        recyclerView = rootView.findViewById(R.id.recycler_view_test);
+        recyclerView = rootView.findViewById(R.id.recycler_view_user_items);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new RvAdapterKlasse();
         recyclerView.setAdapter(adapter);
 
-        MainActivity.textView = rootView.findViewById(R.id.item_text_view);
+        MainActivity.textView = rootView.findViewById(R.id.user_items_text_view);
 
-        fab = rootView.findViewById(R.id.fab);
+        fab = rootView.findViewById(R.id.fab_user_items);
         fab.setOnClickListener(view -> startActivity(new Intent(rootView.getContext(), NewUserItemEntryActivity.class)));
 
         return rootView;
