@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     static ArrayList<String> itemPerson;
     static ArrayList<String> itemDateTo;
     static ArrayList<String> itemDateFrom;
-    static ArrayList<UserItemEntry> lentOutEntrys;
-    private LentOutFragment lentOutFragment;
+    private UserItemsFragment lentOutFragment;
     private DrawerLayout drawer;
     private boolean isListInit;
 
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         ApiCommands.getUserItems("1", this);
 
-        lentOutFragment = new LentOutFragment();
+        lentOutFragment = new UserItemsFragment();
 
         navigationView.setCheckedItem(R.id.nav_user_item_list);
 
@@ -70,20 +69,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         isListInit = true;
     }
 
-    public void setItems(ArrayList<UserItemEntry> lentOutEntrys) {
+    public void setItems(ArrayList<UserItemEntry> userItemEntries) {
         itemTitle = new ArrayList<>();
         itemPerson = new ArrayList<>();
         itemDateTo = new ArrayList<>();
         itemDateFrom = new ArrayList<>();
 
-        for (UserItemEntry entry : lentOutEntrys) {
+        for (UserItemEntry entry : userItemEntries) {
             itemTitle.add(entry.getTitle());
             itemPerson.add(entry.getPerson());
             itemDateTo.add(entry.getDateTo());
             itemDateFrom.add(entry.getDateFrom());
         }
-        lentOutFragment = new LentOutFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.lendoutfragment_container,
+        lentOutFragment = new UserItemsFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.user_item_fragment_container,
                 lentOutFragment).commit();
     }
 
