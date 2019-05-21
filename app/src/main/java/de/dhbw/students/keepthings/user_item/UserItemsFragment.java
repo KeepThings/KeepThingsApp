@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import de.dhbw.students.keepthings.MainActivity;
 import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.RvAdapterKlasse;
-import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
+import de.dhbw.students.keepthings.user_item.new_user_item_entry.NewUserItemEntryActivity;
 
 public class UserItemsFragment extends Fragment {
 

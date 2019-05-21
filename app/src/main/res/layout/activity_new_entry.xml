@@ -35,7 +35,7 @@
 
         <fragment
             android:id="@+id/user_item_fragment_container_new_entry"
-            android:name="de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryFragment"
+            android:name="de.dhbw.students.keepthings.user_item.new_user_item_entry.NewUserItemEntryFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

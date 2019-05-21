@@ -1,4 +1,4 @@
-package de.dhbw.students.keepthings.new_user_item_entry;
+package de.dhbw.students.keepthings.user_item.new_user_item_entry;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

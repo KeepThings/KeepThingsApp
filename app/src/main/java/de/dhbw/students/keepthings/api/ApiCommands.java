@@ -2,7 +2,7 @@ package de.dhbw.students.keepthings.api;
 
 import de.dhbw.students.keepthings.login.LoginActivity;
 import de.dhbw.students.keepthings.MainActivity;
-import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
+import de.dhbw.students.keepthings.user_item.new_user_item_entry.NewUserItemEntryActivity;
 
 
 public class ApiCommands {

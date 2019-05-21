@@ -10,60 +10,35 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.dhbw.students.keepthings.ItemEntryListAdapter;
 import de.dhbw.students.keepthings.R;
+import de.dhbw.students.keepthings.marketplace.MarketplaceEntry;
 
 
-public class UserItemEntryListAdapter extends ArrayAdapter<UserItemEntry> implements View.OnClickListener {
+public class UserItemEntryListAdapter extends ItemEntryListAdapter implements View.OnClickListener {
 
 
     public UserItemEntryListAdapter(ArrayList<UserItemEntry> data, Context context) {
         super(context, R.layout.user_item_entry, data);
 
     }
-
     @Override
-    public void onClick(View v) {
-
+    protected void showdata(View convertView, LayoutInflater inflater, ViewGroup parent){
+        convertView = inflater.inflate(R.layout.user_item_entry, parent, false);
+        viewHolder.txtTitle = convertView.findViewById(R.id.item_title);
+        viewHolder.txtPerson = convertView.findViewById(R.id.item_person);
+        viewHolder.txtDateTo = convertView.findViewById(R.id.item_dateto);
+        viewHolder.txtDateFrom = convertView.findViewById(R.id.item_datefrom);
     }
-
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        UserItemEntry dataModel = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
-
-        if (convertView == null) {
-
-            viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.user_item_entry, parent, false);
-            viewHolder.txtTitle = convertView.findViewById(R.id.item_title);
-            viewHolder.txtPerson = convertView.findViewById(R.id.item_person);
-            viewHolder.txtDateTo = convertView.findViewById(R.id.item_dateto);
-            viewHolder.txtDateFrom = convertView.findViewById(R.id.item_datefrom);
-
-
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-
-
-        viewHolder.txtTitle.setText(dataModel.getTitle());
-        viewHolder.txtPerson.setText(dataModel.getPerson());
-        viewHolder.txtDateTo.setText(dataModel.getDateTo());
-        viewHolder.txtDateFrom.setText(dataModel.getDateFrom());
-        // Return the completed view to render on screen
-        return convertView;
+    protected void showdata2(Object dataModel){
+        UserItemEntry userItemEntryModel = (UserItemEntry)dataModel;
+        viewHolder.txtTitle.setText(userItemEntryModel.getTitle());
+        viewHolder.txtPerson.setText(userItemEntryModel.getPerson());
+        viewHolder.txtDateTo.setText(userItemEntryModel.getDateTo());
+        viewHolder.txtDateFrom.setText(userItemEntryModel.getDateFrom());
     }
-
     // View lookup cache
-    private static class ViewHolder {
-        TextView txtTitle;
-        TextView txtPerson;
-        TextView txtDateTo;
-        TextView txtDateFrom;
-    }
+
 }
 

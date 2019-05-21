@@ -6,7 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import de.dhbw.students.keepthings.R;
-import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
+import de.dhbw.students.keepthings.user_item.new_user_item_entry.NewUserItemEntryActivity;
 
 public class ApiAddLentOutItem extends ApiConnection {
     protected NewUserItemEntryActivity activity;

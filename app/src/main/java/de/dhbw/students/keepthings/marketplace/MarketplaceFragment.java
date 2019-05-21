@@ -9,16 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 import de.dhbw.students.keepthings.MainActivity;
 import de.dhbw.students.keepthings.R;
 import de.dhbw.students.keepthings.RvAdapterKlasse;
-import de.dhbw.students.keepthings.new_user_item_entry.NewUserItemEntryActivity;
-import de.dhbw.students.keepthings.user_item.UserItemEntry;
-import de.dhbw.students.keepthings.user_item.UserItemEntryListAdapter;
+import de.dhbw.students.keepthings.user_item.new_user_item_entry.NewUserItemEntryActivity;
 
 public class MarketplaceFragment extends Fragment {
 
