@@ -33,5 +33,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="com_auth0_client_id" translatable="false">darTWkOKmvvDIwIKw2Qaw6hTuakyHsFy</string>
+    <string name="com_auth0_domain" translatable="false">keepthings.eu.auth0.com</string>
 
 </resources>
